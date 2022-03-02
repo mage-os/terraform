@@ -12,7 +12,8 @@ variable "organization_name" {
 variable "administrators" {
   type = list(string)
   default = [
-    "Jakski"
+    "Jakski",
+    "Vinai",
   ]
 }
 
