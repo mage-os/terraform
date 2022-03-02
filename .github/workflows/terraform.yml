@@ -34,7 +34,7 @@ jobs:
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'pull_request'
-        env: &terraform-env
+        env:
           GITHUB_APP_ID: ${{ env.GH_APP_ID }}
           GITHUB_APP_INSTALLATION_ID: ${{ env.GH_APP_INSTALLATION_ID }}
           GITHUB_APP_PEM_FILE: ${{ env.GH_APP_PEM_FILE }}
@@ -77,5 +77,9 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        env: *terraform-env
+        env:
+          GITHUB_APP_ID: ${{ env.GH_APP_ID }}
+          GITHUB_APP_INSTALLATION_ID: ${{ env.GH_APP_INSTALLATION_ID }}
+          GITHUB_APP_PEM_FILE: ${{ env.GH_APP_PEM_FILE }}
+          TF_VAR_app_node_id: ${{ env.TF_VAR_APP_NODE_ID }}
         run: terraform apply -auto-approve
