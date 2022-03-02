@@ -82,13 +82,6 @@ variable "repositories" {
       teams       = []
     }
 
-    infra1-test = {
-      description = "Infrastructure repository 1"
-      teams = [
-        "infrastructure",
-      ]
-    }
-
     distribution1 = {
       description = "Distribution 1"
       teams = [
