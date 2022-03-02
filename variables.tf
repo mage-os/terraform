@@ -35,7 +35,7 @@ variable "teams" {
       name        = "Tech-lead"
       description = "Technical leaders"
       members = [
-        "JakskiWork",
+        "Jakski",
       ]
     }
 
