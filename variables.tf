@@ -8,8 +8,7 @@ variable "organization_name" {
   default = "Jakski-IT"
 }
 
-# NOTE: Administrators are automatically assigned to every team. Trying to
-# assign them will cause phantom changes in provider.
+# NOTE: Administrators are automatically maintainers for all teams.
 variable "administrators" {
   type = list(string)
   default = [
