@@ -84,21 +84,21 @@ resource "github_branch_protection" "repositories" {
     required_approving_review_count = 2
     dismiss_stale_reviews           = true
     restrict_dismissals             = true
-    dismissal_restrictions          = [
+    dismissal_restrictions = [
       github_team.teams["tech-lead"].node_id,
     ]
   }
 }
 
 resource "github_team_repository" "teams" {
-  for_each = {for i in flatten([
+  for_each = { for i in flatten([
     for repository_name, repository in var.repositories : [
       for team in repository.teams : {
         repository = repository_name
         team       = team
       }
     ]
-  ]) : "${i.repository}_${i.team}" => i}
+  ]) : "${i.repository}_${i.team}" => i }
   team_id    = github_team.teams[each.value.team].name
   repository = github_repository.repositories[each.value.repository].name
   permission = "push"
@@ -112,10 +112,10 @@ resource "github_team_repository" "tech-lead" {
 }
 
 resource "github_repository_file" "codeowners" {
-  for_each            = var.repositories
-  repository          = github_repository.repositories[each.key].name
-  file                = "CODEOWNERS"
-  content             = "* @${var.organization_name}/tech-lead ${join(
+  for_each   = var.repositories
+  repository = github_repository.repositories[each.key].name
+  file       = "CODEOWNERS"
+  content = "* @${var.organization_name}/tech-lead ${join(
     " ",
     formatlist("@${var.organization_name}/%s", each.value.teams)
   )}"

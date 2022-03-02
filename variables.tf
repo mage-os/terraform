@@ -11,14 +11,14 @@ variable "organization_name" {
 # NOTE: Administrators are automatically assigned to every team. Trying to
 # assign them will cause phantom changes in provider.
 variable "administrators" {
-  type    = list(string)
+  type = list(string)
   default = [
     "Jakski"
   ]
 }
 
 variable "mirror_repositories" {
-  type    = map
+  type = map(any)
   default = {
     sphinxcontrib-autoyaml = {}
   }
@@ -34,7 +34,7 @@ variable "teams" {
     tech-lead = {
       name        = "Tech-lead"
       description = "Technical leaders"
-      members     = [
+      members = [
         "JakskiWork",
       ]
     }
@@ -42,7 +42,7 @@ variable "teams" {
     infrastructure = {
       name        = "Infrastructure"
       description = "Infrastructure mergers"
-      members     = [
+      members = [
         "JakskiWork",
       ]
     }
@@ -50,7 +50,7 @@ variable "teams" {
     content = {
       name        = "Content"
       description = "Content mergers"
-      members     = [
+      members = [
         "JakskiWork",
       ]
       repositories = {
@@ -61,7 +61,7 @@ variable "teams" {
     distribution = {
       name        = "Distribution"
       description = "Distribution mergers"
-      members     = [
+      members = [
         "JakskiWork",
       ]
     }
@@ -73,7 +73,7 @@ variable "teams" {
 variable "repositories" {
   type = map(object({
     description = string
-    teams = list(string)
+    teams       = list(string)
   }))
 
   default = {
@@ -84,21 +84,21 @@ variable "repositories" {
 
     infra1-test = {
       description = "Infrastructure repository 1"
-      teams       = [
+      teams = [
         "infrastructure",
       ]
     }
 
     distribution1 = {
       description = "Distribution 1"
-      teams       = [
+      teams = [
         "distribution"
       ]
     }
 
     shared1 = {
       description = "Shared repository"
-      teams       = [
+      teams = [
         "content",
         "distribution",
       ]
