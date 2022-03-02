@@ -10,6 +10,16 @@ jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
+    env:
+      # Swift state backend
+      OS_USERNAME: ${{ secrets.OS_USERNAME }}
+      OS_PASSWORD: ${{ secrets.OS_PASSWORD }}
+      OS_TENANT_NAME: ${{ secrets.OS_TENANT_NAME }}
+      # GitHub provider
+      TF_VAR_app_node_id: ${{ secrets.TF_VAR_APP_NODE_ID }}
+      GITHUB_APP_ID: ${{ secrets.GH_APP_ID }}
+      GITHUB_APP_INSTALLATION_ID: ${{ secrets.GH_APP_INSTALLATION_ID }}
+      GITHUB_APP_PEM_FILE: ${{ secrets.GH_APP_PEM_FILE }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -34,11 +44,6 @@ jobs:
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'pull_request'
-        env:
-          GITHUB_APP_ID: ${{ env.GH_APP_ID }}
-          GITHUB_APP_INSTALLATION_ID: ${{ env.GH_APP_INSTALLATION_ID }}
-          GITHUB_APP_PEM_FILE: ${{ env.GH_APP_PEM_FILE }}
-          TF_VAR_app_node_id: ${{ env.TF_VAR_APP_NODE_ID }}
         run: terraform plan -no-color
         continue-on-error: true
 
@@ -77,9 +82,4 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        env:
-          GITHUB_APP_ID: ${{ env.GH_APP_ID }}
-          GITHUB_APP_INSTALLATION_ID: ${{ env.GH_APP_INSTALLATION_ID }}
-          GITHUB_APP_PEM_FILE: ${{ env.GH_APP_PEM_FILE }}
-          TF_VAR_app_node_id: ${{ env.TF_VAR_APP_NODE_ID }}
         run: terraform apply -auto-approve
