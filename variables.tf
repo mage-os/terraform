@@ -14,6 +14,7 @@ variable "administrators" {
   default = [
     "Jakski",
     "Vinai",
+    "sprankhub",
   ]
 }
 
