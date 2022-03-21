@@ -54,9 +54,6 @@ variable "teams" {
       members = [
         "JakskiWork",
       ]
-      repositories = {
-        content1 = {}
-      }
     }
 
     distribution = {
