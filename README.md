@@ -13,10 +13,14 @@ In order to add a new user to an existing team, follow these steps:
 
 ## Adding New Repositories
 
-TODO: Double check if this is correct or if repositories need to go under the `repositories` section.
-
 In order to add new repositories, so that the respective permissions / protections are applied automatically, follow these steps:
 
 1. Open the [variables.tf](https://github.com/Jakski-IT/terraform/blob/main/variables.tf) file.
-2. Find the team to which you want to add the repository in the `variable "teams"` section.
-3. Add the repository name to the `repositories` object of the respective team.
+2. Add the repository in the `variable "repositories"` > `default` section replacing the placeholders:
+
+        {{REPOSITORY_NAME}} = {
+          description = "{{DESCRIPTION}}"
+          teams = [
+            "{{TEAM_NAME}}"
+          ]
+        }
