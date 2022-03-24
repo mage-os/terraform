@@ -2,9 +2,14 @@ name: "Terraform"
 
 on:
   push:
+    paths-ignore: &paths_ignore
+      - .gitignore
+      - README.md
+      - CODEOWNERS
     branches:
       - main
-  pull_request: ~
+  pull_request:
+    paths-ignore: *paths_ignore
 
 jobs:
   terraform:
