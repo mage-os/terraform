@@ -3,10 +3,18 @@ name: "Terraform"
 on:
   push:
     paths-ignore:
+      # YAML anchors doesn't seem to work in GitHub Actions, so we have to copy
+      # this field.
+      - .gitignore
       - README.md
+      - CODEOWNERS
     branches:
       - main
-  pull_request: ~
+  pull_request:
+    paths-ignore:
+      - .gitignore
+      - README.md
+      - CODEOWNERS
 
 jobs:
   terraform:
