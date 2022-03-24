@@ -2,11 +2,8 @@ name: "Terraform"
 
 on:
   push:
-    # Test
     paths-ignore: &paths_ignore
-      - .gitignore
       - README.md
-      - CODEOWNERS
     branches:
       - main
   pull_request:
