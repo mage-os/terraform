@@ -18,10 +18,18 @@ provider "github" {
   app_auth {}
 }
 
-resource "github_membership" "administrators" {
-  for_each = toset(var.administrators)
+# Using exclusively github_team_membership properly sends invitation, but
+# doesn't handle revoking organization membership. Someone can be a part of
+# organization, but not belong to any team. Stating membership explicitly also
+# makes transitions between administrators and normal members possible in
+# single apply.
+resource "github_membership" "users" {
+  for_each = toset(distinct(concat(
+    flatten([for team in var.teams : team.members]),
+    var.administrators,
+  )))
   username = each.key
-  role     = "admin"
+  role     = contains(var.administrators, each.key) ? "admin" : "member"
 }
 
 resource "github_team" "teams" {
@@ -31,16 +39,22 @@ resource "github_team" "teams" {
   privacy     = "closed"
 }
 
-resource "github_team_members" "members" {
-  for_each = var.teams
-  team_id  = github_team.teams[each.key].id
-  dynamic "members" {
-    for_each = try(each.value.members, [])
-    content {
-      username = members.value
-      role     = "member"
-    }
-  }
+resource "github_team_membership" "members" {
+  for_each = { for i in flatten([
+    for team_name, team in var.teams : [
+      for member in team.members : {
+        team = team_name
+        user = member
+      }
+    ]
+  ]) : "${i.user}_${i.team}" => i }
+  team_id  = github_team.teams[each.value.team].id
+  username = each.value.user
+  # Administrators are automatically assigned maintainer role. Do it explicitly
+  # to avoid state discrepancy.
+  role = contains(
+    var.administrators, each.value.user
+  ) ? "maintainer" : "member"
 }
 
 resource "github_repository" "mirrors" {
@@ -93,7 +107,7 @@ resource "github_branch_protection" "repositories" {
 resource "github_team_repository" "teams" {
   for_each = { for i in flatten([
     for repository_name, repository in var.repositories : [
-      for team in repository.teams : {
+      for team in try(repository.teams, []) : {
         repository = repository_name
         team       = team
       }
@@ -117,7 +131,7 @@ resource "github_repository_file" "codeowners" {
   file       = "CODEOWNERS"
   content = "* @${var.organization_name}/tech-lead ${join(
     " ",
-    formatlist("@${var.organization_name}/%s", each.value.teams)
+    formatlist("@${var.organization_name}/%s", try(each.value.teams, []))
   )}"
   commit_message      = "Managed by Terraform"
   commit_author       = "Jakski IT Bot"

@@ -1,16 +1,12 @@
 variable "app_node_id" {
-  type    = string
   default = null
 }
 
 variable "organization_name" {
-  type    = string
   default = "Jakski-IT"
 }
 
-# NOTE: Administrators are automatically maintainers for all teams.
 variable "administrators" {
-  type = list(string)
   default = [
     "Jakski",
     "Vinai",
@@ -19,24 +15,18 @@ variable "administrators" {
 }
 
 variable "mirror_repositories" {
-  type = map(any)
   default = {
     sphinxcontrib-autoyaml = {}
   }
 }
 
 variable "teams" {
-  type = map(object({
-    name        = string
-    description = string
-    members     = list(string)
-  }))
   default = {
     tech-lead = {
       name        = "Tech-lead"
       description = "Technical leaders"
       members = [
-        "JakskiWork",
+        "Jakski",
       ]
     }
 
@@ -61,24 +51,15 @@ variable "teams" {
       description = "Distribution mergers"
       members = [
         "JakskiWork",
-        "sprankhub",
       ]
     }
   }
 }
 
-# NOTE: Don't assign tech-lead to any repository. They're maintainers by
-# default.
 variable "repositories" {
-  type = map(object({
-    description = string
-    teams       = list(string)
-  }))
-
   default = {
     terraform = {
       description = "Terraform files for managing organization infrastructure"
-      teams       = []
     }
 
     distribution1 = {
