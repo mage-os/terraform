@@ -11,7 +11,11 @@ jobs:
     name: "Terraform plan"
     if: >
       github.event.issue.pull_request &&
-      github.event.comment.body == "terraform plan"
+      contains([
+        "Vinai",
+        "Jakski",
+        "sprankhub",
+      ], github.event.comment.user.login)
     runs-on: ubuntu-latest
     env:
       # Swift state backend
