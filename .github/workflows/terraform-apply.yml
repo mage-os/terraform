@@ -31,9 +31,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Terraform Init
+      - name: Terraform init
         id: init
         run: terraform init
 
-      - name: Terraform Apply
+      - name: Terraform apply
         run: terraform apply -auto-approve
