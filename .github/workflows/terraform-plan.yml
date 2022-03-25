@@ -31,6 +31,20 @@ jobs:
       TF_VAR_github_app_installation_id: ${{ secrets.GH_APP_INSTALLATION_ID }}
       TF_VAR_github_app_pem_file: ${{ secrets.GH_APP_PEM_FILE }}
     steps:
+      - name: Get pull request ref
+        id: sha
+        uses: actions/github-script@v0.9.0
+        with:
+          result-encoding: string
+          script: |
+            const { owner, repo, number } = context.issue;
+            const pr = await github.pulls.get({
+              owner,
+              repo,
+              pull_number: number,
+            });
+            return pr.data.head.sha
+
       - uses: actions/github-script@0.9.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -45,8 +59,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: ${{ github.event.issue.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.issue.pull_request.head.sha }}
+          ref: ${{ steps.sha.outputs.result }}
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
