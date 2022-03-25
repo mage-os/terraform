@@ -33,7 +33,7 @@ jobs:
         run: echo "Yes"
 
       - name: Test 3
-        if: ${{ contains(['Jakski', 'Vinai'], github.event.comment.user.login) }}
+        if: ${{ github.event.comment.user.login == 'Jakski' }}
         run: echo "Yes"
 
       - uses: actions/github-script@0.9.0
