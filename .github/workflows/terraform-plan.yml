@@ -23,6 +23,17 @@ jobs:
       TF_VAR_github_app_installation_id: ${{ secrets.GH_APP_INSTALLATION_ID }}
       TF_VAR_github_app_pem_file: ${{ secrets.GH_APP_PEM_FILE }}
     steps:
+      - uses: actions/github-script@0.9.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "@${{ github.actor }} Starting Terraform plan ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}";
+            })
+
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -59,14 +70,11 @@ jobs:
 
             </details>
 
-            Pusher: @${{ github.actor }}, Action: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`;
+            Issuer: @${{ github.actor }}, Action: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`;
 
             github.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: output
-            })
               repo: context.repo.repo,
               body: output
             })
