@@ -59,7 +59,7 @@ jobs:
 
             </details>
 
-            *Pusher: @${{ github.actor }}, Action: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`;
+            Pusher: @${{ github.actor }}, Action: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`;
 
             github.issues.createComment({
               issue_number: context.issue.number,
