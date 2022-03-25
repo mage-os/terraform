@@ -7,6 +7,27 @@ on:
     types: [created]
 
 jobs:
+  test1:
+    name: "Test1"
+    if: github.event.comment.body == 'terraform plan'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Yes"
+
+  test2:
+    name: "Test2"
+    if: github.event.issue.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Yes"
+
+  test3:
+    name: "Test3"
+    if: github.event.comment.user.login == 'Jakski'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Yes"
+
   terraform-plan:
     name: "Terraform plan"
     if: github.event.issue.pull_request
@@ -31,7 +52,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "@${{ github.actor }} Starting Terraform plan ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}";
+              body: "@${{ github.actor }} Starting Terraform plan ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
             })
 
       - name: Checkout
