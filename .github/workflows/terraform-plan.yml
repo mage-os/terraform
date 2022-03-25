@@ -9,10 +9,10 @@ on:
 jobs:
   terraform-plan:
     name: "Terraform plan"
+    #github.event.issue.pull_request.base.ref == "main"
     if: >
       github.event.issue.pull_request &&
-      github.event.issue.pull_request.base.ref == "main"
-    #github.event.comment.body == "terraform plan" &&
+      github.event.comment.body == "terraform plan"
     #contains(
       #[
         #"Vinai",
