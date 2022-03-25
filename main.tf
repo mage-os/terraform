@@ -15,7 +15,11 @@ terraform {
 
 provider "github" {
   owner = var.organization_name
-  app_auth {}
+  app_auth {
+    id              = var.github_app_id
+    installation_id = var.github_app_installation_id
+    pem_file        = var.github_app_pem_file
+  }
 }
 
 # Using exclusively github_team_membership properly sends invitation, but
@@ -64,6 +68,11 @@ resource "github_repository" "mirrors" {
   has_issues   = false
   has_projects = false
   has_wiki     = false
+
+  lifecycle {
+    # Never try to replace repository in order to change its configuration.
+    prevent_destroy = true
+  }
 }
 
 resource "github_branch_protection" "mirrors" {
@@ -80,6 +89,11 @@ resource "github_repository" "repositories" {
   name        = each.key
   description = try(each.value.description, null)
   auto_init   = true
+
+  lifecycle {
+    # Never try to replace repository in order to change its configuration.
+    prevent_destroy = true
+  }
 }
 
 resource "github_branch_protection" "repositories" {
