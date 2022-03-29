@@ -66,17 +66,12 @@ variable "repositories" {
 
     distribution1 = {
       description = "Distribution 1"
-      teams = [
-        "distribution"
-      ]
+      teams = ["distribution"]
     }
 
     shared1 = {
       description = "Shared repository"
-      teams = [
-        "content",
-        "distribution",
-      ]
+      teams = ["content", "distribution"]
     }
   }
 }

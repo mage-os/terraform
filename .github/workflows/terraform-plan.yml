@@ -12,7 +12,7 @@ jobs:
     if: >
       ${{
         github.event.issue.pull_request &&
-        github.event.comment.body == 'terraform plan' &&
+        github.event.comment.body == '/plan' &&
         (
           github.event.comment.user.login == 'Jakski' ||
           github.event.comment.user.login == 'Vinai' ||

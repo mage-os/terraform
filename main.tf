@@ -143,7 +143,7 @@ resource "github_repository_file" "codeowners" {
   for_each   = var.repositories
   repository = github_repository.repositories[each.key].name
   file       = "CODEOWNERS"
-  content = "* @${var.organization_name}/tech-lead ${join(
+  content = "* ${join(
     " ",
     formatlist("@${var.organization_name}/%s", try(each.value.teams, []))
   )}"
