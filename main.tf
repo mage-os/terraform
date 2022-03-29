@@ -22,6 +22,8 @@ provider "github" {
   }
 }
 
+# Test change
+
 # Using exclusively github_team_membership properly sends invitation, but
 # doesn't handle revoking organization membership. Someone can be a part of
 # organization, but not belong to any team. Stating membership explicitly also
