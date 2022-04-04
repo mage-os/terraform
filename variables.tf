@@ -74,5 +74,10 @@ variable "repositories" {
       description = "Shared repository"
       teams       = ["content", "distribution"]
     }
+
+    test1 = {
+      description = "Test repository"
+      teams       = ["distribution"]
+    }
   }
 }
