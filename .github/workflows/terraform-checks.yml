@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Get pull request ref
         id: sha
-        uses: actions/github-script@v0.9.0
+        uses: actions/github-script@0.9.0
         with:
           result-encoding: string
           script: |
