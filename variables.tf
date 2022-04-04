@@ -37,7 +37,6 @@ variable "teams" {
       description = "Infrastructure mergers"
       members = [
         "JakskiWork",
-        "Jakski",
       ]
     }
 
