@@ -22,7 +22,6 @@ variable "mirror_repositories" {
   }
 }
 
-# Test change
 variable "teams" {
   default = {
     tech-lead = {
