@@ -9,6 +9,8 @@ on:
 jobs:
   terraform-plan:
     name: "Terraform plan"
+    # This conditional acts as an access control list to prevent exposing
+    # secrets to untrusted pull requests.
     if: >
       ${{
         github.event.issue.pull_request &&
