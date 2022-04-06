@@ -54,6 +54,7 @@ variable "teams" {
       members = [
         "JakskiWork",
         "Jakski",
+        "Vinai",
       ]
     }
   }
