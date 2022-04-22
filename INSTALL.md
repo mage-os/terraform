@@ -37,10 +37,9 @@ Github App will use [private key](https://docs.github.com/en/developers/apps/bui
 for authentication. In order to properly authenticate with Terraform GitHub
 provider you will need:
 
-- GitHub App ID(`github_app_id` in `variables.tf`)
-- GitHub App installation ID(specific to organization,
-  `github_app_installation_id` in `variables.tf`)
-- GitHub App private key in PEM format (`github_app_pem_file` in `variables.tf`)
+- GitHub App ID (GitHub Action secret `GH_APP_ID`)
+- GitHub App installation ID (GitHub Action secret `GH_APP_INSTALLATION_ID`)
+- GitHub App private key in PEM format (GitHub Action secret `GH_APP_PEM_FILE`)
 
 ## Getting GitHub App node ID
 
