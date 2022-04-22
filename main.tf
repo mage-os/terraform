@@ -1,8 +1,7 @@
 terraform {
-  backend "swift" {
-    auth_url    = "https://auth.cloud.ovh.net/v3"
-    region_name = "WAW"
-    container   = "terraform-jakski-it"
+  backend "gcs" {
+    bucket  = "tf-state-prod"
+    prefix  = "terraform/state"
   }
 
   required_providers {
@@ -150,7 +149,7 @@ resource "github_repository_file" "codeowners" {
     formatlist("@${var.organization_name}/%s", try(each.value.teams, []))
   )}"
   commit_message      = "Managed by Terraform"
-  commit_author       = "Jakski IT Bot"
-  commit_email        = "issues+github@jakski.name"
+  commit_author       = "Mage-OS CI Bot"
+  commit_email        = "info+ci@mage-os.org"
   overwrite_on_create = true
 }
