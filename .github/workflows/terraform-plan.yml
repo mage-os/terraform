@@ -23,6 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # Google Cloud Storage state backend
+      GOOGLE_APPLICATION_CREDENTIALS_DATA: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_DATA }}
       GOOGLE_APPLICATION_CREDENTIALS: '/tmp/tf-google-application-credentials.json'
       # GitHub provider
       TF_VAR_app_node_id: ${{ secrets.TF_VAR_APP_NODE_ID }}
@@ -31,7 +32,7 @@ jobs:
       TF_VAR_github_app_pem_file: ${{ secrets.GH_APP_PEM_FILE }}
     steps:
       - name: Write GCS credentials
-        run: echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_DATA }}" > $GOOGLE_APPLICATION_CREDENTIALS
+        run: echo $GOOGLE_APPLICATION_CREDENTIALS_DATA > $GOOGLE_APPLICATION_CREDENTIALS
       - name: Get pull request ref
         id: ref
         uses: actions/github-script@0.9.0
