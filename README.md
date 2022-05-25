@@ -25,6 +25,7 @@ In order to add new repositories, so that the respective permissions / protectio
 
 ## Changing Terraform Configuration
 
+
 The process for changing Terraform configuration is as follows:
 
 1. Change configuration as you wish and send a pull request.
