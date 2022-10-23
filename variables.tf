@@ -16,79 +16,6 @@ variable "administrators" {
 
 variable "mirror_repositories" {
   default = {
-    sphinxcontrib-autoyaml = {}
-  }
-}
-
-variable "teams" {
-  default = {
-    tech-lead = {
-      name        = "Tech-lead"
-      description = "Technical leaders"
-      members = [
-        "Vinai",
-      ]
-    }
-
-    infrastructure = {
-      name        = "Infrastructure"
-      description = "Infrastructure mergers"
-      members = [
-        "Vinai",
-        "sprankhub",
-      ]
-    }
-
-    content = {
-      name        = "Content"
-      description = "Content mergers"
-      members = [
-        "johnhughes1984",
-        "wigman",
-        "Vinai",
-      ]
-    }
-
-    distribution = {
-      name        = "Distribution"
-      description = "Distribution mergers"
-      members = [
-        "Vinai",
-        "sprankhub",
-      ]
-    }
-
-    continuous-integration = {
-      name        = "Continuous Integration"
-      description = "Continuous Integration"
-      members = [
-        "mage-os-ci",
-      ]
-    }
-  }
-}
-
-variable "repositories" {
-  default = {
-    terraform = {
-      description = "Terraform files for managing the organization repository permissions."
-    }
-
-    infrastructure = {
-      description = "Mage-OS organization infrastructure discussion and GitHub Actions."
-      teams       = ["infrastructure"]
-    }
-
-    mage-os-website = {
-      description = "Source of the mage-os.org website."
-      teams       = ["content"]
-    }
-
-    mageos-magento2 = {
-      description = "Work in progress."
-      teams       = ["distribution"]
-    }
-
     mirror-adobe-ims = {
       description = "Mage-OS mirror fork of https://github.com/magento/adobe-ims."
       teams       = ["continuous-integration"]
@@ -162,6 +89,77 @@ variable "repositories" {
     mirror-zf1 = {
       description = "Mage-OS mirror fork of https://github.com/magento/zf1."
       teams       = ["continuous-integration"]
+    }
+  }
+}
+
+variable "teams" {
+  default = {
+    tech-lead = {
+      name        = "Tech-lead"
+      description = "Technical leaders"
+      members = [
+        "Vinai",
+      ]
+    }
+
+    infrastructure = {
+      name        = "Infrastructure"
+      description = "Infrastructure mergers"
+      members = [
+        "Vinai",
+        "sprankhub",
+      ]
+    }
+
+    content = {
+      name        = "Content"
+      description = "Content mergers"
+      members = [
+        "johnhughes1984",
+        "wigman",
+        "Vinai",
+      ]
+    }
+
+    distribution = {
+      name        = "Distribution"
+      description = "Distribution mergers"
+      members = [
+        "Vinai",
+        "sprankhub",
+      ]
+    }
+
+    continuous-integration = {
+      name        = "Continuous Integration"
+      description = "Continuous Integration"
+      members = [
+        "mage-os-ci",
+      ]
+    }
+  }
+}
+
+variable "repositories" {
+  default = {
+    terraform = {
+      description = "Terraform files for managing the organization repository permissions."
+    }
+
+    infrastructure = {
+      description = "Mage-OS organization infrastructure discussion and GitHub Actions."
+      teams       = ["infrastructure"]
+    }
+
+    mage-os-website = {
+      description = "Source of the mage-os.org website."
+      teams       = ["content"]
+    }
+
+    mageos-magento2 = {
+      description = "Work in progress."
+      teams       = ["distribution"]
     }
 
     namespace = {
