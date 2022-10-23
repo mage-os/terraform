@@ -25,6 +25,16 @@ variable "mirror_repositories" {
       description = "Mage-OS mirror fork of https://github.com/magento/adobe-stock-integration."
       teams       = ["continuous-integration"]
     }
+    
+    mirror-commerce-data-export = {
+      description = "Mage-OS mirror fork of https://github.com/magento/commerce-data-export."
+      teams       = ["continuous-integration"]
+    }
+
+    mirror-composer = {
+      description = "Mage-OS mirror fork of https://github.com/magento/composer."
+      teams       = ["continuous-integration"]
+    }
 
     mirror-composer-dependency-version-audit-plugin = {
       description = "Mage-OS mirror fork of https://github.com/magento/composer-dependency-version-audit-plugin."
