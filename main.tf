@@ -40,7 +40,7 @@ resource "github_membership" "users" {
 resource "github_team" "teams" {
   for_each    = var.teams
   name        = each.key
-  description = try(each.value.description, null)
+  description = each.value.description
   privacy     = "closed"
 }
 
@@ -65,7 +65,7 @@ resource "github_team_membership" "members" {
 resource "github_repository" "mirrors" {
   for_each     = var.mirror_repositories
   name         = each.key
-  description  = try(each.value.description, null)
+  description  = each.value.description
   has_issues   = false
   has_projects = false
   has_wiki     = false
@@ -88,7 +88,7 @@ resource "github_branch_protection" "mirrors" {
 resource "github_repository" "repositories" {
   for_each    = var.repositories
   name        = each.key
-  description = try(each.value.description, null)
+  description = each.value.description
   auto_init   = true
 
   lifecycle {
