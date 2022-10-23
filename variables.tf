@@ -57,6 +57,14 @@ variable "teams" {
         "sprankhub",
       ]
     }
+
+    continuous-integration = {
+      name        = "Continuous Integration"
+      description = "Continuous Integration"
+      members = [
+        "mage-os-ci",
+      ]
+    }
   }
 }
 
