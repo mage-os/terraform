@@ -21,6 +21,10 @@ provider "github" {
   }
 }
 
+data "github_user" "mage-os-ci" {
+  username = "mage-os-ci"
+}
+
 # Test change
 
 # Using exclusively github_team_membership properly sends invitation, but
@@ -81,7 +85,7 @@ resource "github_branch_protection" "mirrors" {
   repository_id       = github_repository.mirrors[each.key].node_id
   pattern             = "*"
   enforce_admins      = true
-  push_restrictions   = [var.app_node_id]
+  push_restrictions   = [data.github_user.mage-os-ci.node_id]
   allows_force_pushes = false
 }
 
