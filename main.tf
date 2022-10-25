@@ -1,7 +1,7 @@
 terraform {
   backend "gcs" {
-    bucket  = "mage-os-tf-state"
-    prefix  = "terraform/state"
+    bucket = "mage-os-tf-state"
+    prefix = "terraform/state"
   }
 
   required_providers {
@@ -90,10 +90,13 @@ resource "github_branch_protection" "mirrors" {
 }
 
 resource "github_repository" "repositories" {
-  for_each    = var.repositories
-  name        = each.key
-  description = each.value.description
-  auto_init   = true
+  for_each     = var.repositories
+  name         = each.key
+  description  = each.value.description
+  has_issues   = true
+  has_projects = true
+  has_wiki     = false
+  auto_init    = true
 
   lifecycle {
     # Never try to replace repository in order to change its configuration.
