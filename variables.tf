@@ -119,6 +119,7 @@ variable "teams" {
       members = [
         "Vinai",
         "sprankhub",
+        "damienwebdev",
       ]
     }
 
