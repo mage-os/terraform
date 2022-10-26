@@ -25,7 +25,7 @@ variable "mirror_repositories" {
       description = "Mage-OS mirror fork of https://github.com/magento/adobe-stock-integration."
       teams       = ["continuous-integration"]
     }
-    
+
     mirror-commerce-data-export = {
       description = "Mage-OS mirror fork of https://github.com/magento/commerce-data-export."
       teams       = ["continuous-integration"]

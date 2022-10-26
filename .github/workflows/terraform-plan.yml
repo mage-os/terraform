@@ -11,15 +11,13 @@ jobs:
     name: "Terraform plan"
     # This conditional acts as an access control list to prevent exposing
     # secrets to untrusted pull requests.
-    if: >
-      ${{
-        github.event.issue.pull_request &&
-        github.event.comment.body == '/plan' &&
-        (
-          github.event.comment.user.login == 'Vinai' ||
-          github.event.comment.user.login == 'sprankhub'
-        )
-      }}
+    if: |
+      github.event.issue.pull_request &&
+      github.event.comment.body == '/plan' &&
+      (
+        github.event.comment.user.login == 'Vinai' ||
+        github.event.comment.user.login == 'sprankhub'
+      )
     runs-on: ubuntu-latest
     env:
       # Google Cloud Storage state backend
