@@ -168,8 +168,58 @@ variable "repositories" {
       teams       = ["content"]
     }
 
+    mageos-adobe-stock-integration = {
+      description = "This is a Mage-OS fork of the Magento Adobe Stock Integration Project found at https://github.com/magento/adobe-stock-integration."
+      teams       = ["distribution"]
+    }
+
+    mageos-commerce-data-export = {
+      description = "This is a Mage-OS fork of the Magento Commerce Data Export Project found at https://github.com/magento/commerce-data-export."
+      teams       = ["distribution"]
+    }
+
+    mageos-composer-dependency-version-audit-plugin = {
+      description = "This is a Mage-OS fork of the validating Magento packages through a composer plugin Project found at https://github.com/magento/composer-dependency-version-audit-plugin."
+      teams       = ["distribution"]
+    }
+
+    mageos-composer-root-update-plugin = {
+      description = "This is a Mage-OS fork of the Magento Composer Root Update Plugin found at https://github.com/magento/composer-root-update-plugin."
+      teams       = ["distribution"]
+    }
+
+    mageos-inventory = {
+      description = "This is a Mage-OS fork of the Magento Inventory Project (a.k.a MSI) found at https://github.com/magento/inventory."
+      teams       = ["distribution"]
+    }
+
+    mageos-inventory-composer-installer = {
+      description = "This is a Mage-OS fork of the Inventory Composer Installer Project found at https://github.com/magento/inventory-composer-installer."
+      teams       = ["distribution"]
+    }
+
+    mageos-magento-composer-installer = {
+      description = "This is a Mage-OS fork of the Magento Composer Installer Project found at https://github.com/magento/magento-composer-installer."
+      teams       = ["distribution"]
+    }
+
     mageos-magento2 = {
       description = "Work in progress."
+      teams       = ["distribution"]
+    }
+
+    mageos-magento2-page-builder = {
+      description = "This is a Mage-OS fork of the Magento2 PageBuilder Project found at https://github.com/magento/magento2-page-builder."
+      teams       = ["distribution"]
+    }
+
+    mageos-magento2-sample-data = {
+      description = "This is a Mage-OS fork of the Magento 2 Sample Data Project found at https://github.com/magento/magento2-sample-data."
+      teams       = ["distribution"]
+    }
+
+    mageos-security-package = {
+      description = "This is a Mage-OS fork of the Magento Security Extensions project found at https://github.com/magento/security-package."
       teams       = ["distribution"]
     }
 
