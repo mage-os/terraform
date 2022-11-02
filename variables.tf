@@ -158,6 +158,11 @@ variable "repositories" {
       description = "Terraform files for managing the organization repository permissions."
     }
 
+    generate-mirror-repo-js = {
+      description = "Experimental JavaScript monorepo splitter implementation."
+      teams       = ["infrastructure"]
+    }
+
     infrastructure = {
       description = "Mage-OS organization infrastructure discussion and GitHub Actions."
       teams       = ["infrastructure"]
