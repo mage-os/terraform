@@ -108,7 +108,7 @@ resource "github_branch_protection" "repositories" {
   for_each          = var.repositories
   repository_id     = github_repository.repositories[each.key].node_id
   pattern           = "*"
-  push_restrictions = []
+  push_restrictions = [github_team.teams["continuous-integration"].node_id]
 
   required_status_checks {
     strict   = true
