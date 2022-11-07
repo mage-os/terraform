@@ -26,8 +26,18 @@ variable "mirror_repositories" {
       teams       = ["continuous-integration"]
     }
 
+    "mirror-commerce-admin.en" = {
+      description = "Mage-OS mirror of https://github.com/AdobeDocs/commerce-admin.en."
+      teams       = ["continuous-integration"]
+    }
+
     mirror-commerce-data-export = {
       description = "Mage-OS mirror fork of https://github.com/magento/commerce-data-export."
+      teams       = ["continuous-integration"]
+    }
+
+    "mirror-commerce-operations.en" = {
+      description = "Mage-OS mirror of https://github.com/AdobeDocs/commerce-operations.en."
       teams       = ["continuous-integration"]
     }
 
@@ -98,16 +108,6 @@ variable "mirror_repositories" {
 
     mirror-zf1 = {
       description = "Mage-OS mirror fork of https://github.com/magento/zf1."
-      teams       = ["continuous-integration"]
-    }
-
-    mirror-mirror-commerce-admin.en = {
-      description = "Mage-OS mirror of https://github.com/AdobeDocs/commerce-admin.en."
-      teams       = ["continuous-integration"]
-    }
-
-    mirror-commerce-operations.en = {
-      description = "Mage-OS mirror of https://github.com/AdobeDocs/commerce-operations.en."
       teams       = ["continuous-integration"]
     }
   }
