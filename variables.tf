@@ -169,7 +169,7 @@ variable "repositories" {
     }
 
     generate-mirror-repo-js = {
-      description = "Experimental JavaScript monorepo splitter implementation."
+      description = "Mage-OS packaging implementation (JavaScript)."
       teams       = ["infrastructure"]
     }
 
