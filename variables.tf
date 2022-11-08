@@ -180,8 +180,9 @@ variable "repositories" {
     }
 
     mage-os-website = {
-      description = "Source of the mage-os.org website."
-      teams       = ["content"]
+      description  = "Source of the mage-os.org website."
+      teams        = ["content"]
+      homepage_url = "https://mage-os.org"
     }
 
     mageos-adobe-stock-integration = {
