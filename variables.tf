@@ -130,6 +130,7 @@ variable "teams" {
         "Vinai",
         "sprankhub",
         "damienwebdev",
+        "DavidLambauer",
       ]
     }
 
