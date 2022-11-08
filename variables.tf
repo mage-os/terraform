@@ -26,8 +26,18 @@ variable "mirror_repositories" {
       teams       = ["continuous-integration"]
     }
 
+    "mirror-commerce-admin.en" = {
+      description = "Mage-OS mirror of https://github.com/AdobeDocs/commerce-admin.en."
+      teams       = ["continuous-integration"]
+    }
+
     mirror-commerce-data-export = {
       description = "Mage-OS mirror fork of https://github.com/magento/commerce-data-export."
+      teams       = ["continuous-integration"]
+    }
+
+    "mirror-commerce-operations.en" = {
+      description = "Mage-OS mirror of https://github.com/AdobeDocs/commerce-operations.en."
       teams       = ["continuous-integration"]
     }
 
@@ -159,7 +169,7 @@ variable "repositories" {
     }
 
     generate-mirror-repo-js = {
-      description = "Experimental JavaScript monorepo splitter implementation."
+      description = "Mage-OS packaging implementation (JavaScript)."
       teams       = ["infrastructure"]
     }
 
