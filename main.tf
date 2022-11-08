@@ -118,7 +118,7 @@ resource "github_branch_protection" "repositories" {
 
   required_pull_request_reviews {
     require_code_owner_reviews      = true
-    required_approving_review_count = 2
+    required_approving_review_count = 1
     dismiss_stale_reviews           = true
     restrict_dismissals             = true
     dismissal_restrictions = [
