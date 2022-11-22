@@ -170,6 +170,11 @@ variable "repositories" {
       description = "Terraform files for managing the organization repository permissions."
     }
 
+    dev-env-gitpod = {
+      description = "Mage-OS development environment via Gitpod."
+      teams       = ["infrastructure"]
+    }
+
     generate-mirror-repo-js = {
       description = "Mage-OS packaging implementation (JavaScript)."
       teams       = ["infrastructure"]
