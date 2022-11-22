@@ -168,6 +168,7 @@ variable "repositories" {
   default = {
     terraform = {
       description = "Terraform files for managing the organization repository permissions."
+      teams       = ["infrastructure"]
     }
 
     dev-env-gitpod = {
