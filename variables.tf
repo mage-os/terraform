@@ -110,6 +110,16 @@ variable "mirror_repositories" {
       description = "Mage-OS mirror fork of https://github.com/magento/zf1."
       teams       = ["continuous-integration"]
     }
+
+    mirror-magento-cloud-patches = {
+      description = "This is a Mage-OS fork of the Magento Cloud Patches project found at https://github.com/magento/magento-cloud-patches."
+      teams       = ["infrastructure"]
+    }
+
+    mirror-quality-patches = {
+      description = "This is a Mage-OS fork of the Magento Quality Patches Tool project found at https://github.com/magento/quality-patches."
+      teams       = ["infrastructure"]
+    }
   }
 }
 
@@ -183,16 +193,6 @@ variable "repositories" {
 
     infrastructure = {
       description = "Mage-OS organization infrastructure discussion and GitHub Actions."
-      teams       = ["infrastructure"]
-    }
-
-    mage-os-mirror-magento-cloud-patches = {
-      description = "This is a Mage-OS fork of the Magento Cloud Patches project found at https://github.com/magento/magento-cloud-patches."
-      teams       = ["infrastructure"]
-    }
-
-    mage-osmirror-quality-patches = {
-      description = "This is a Mage-OS fork of the Magento Quality Patches Tool project found at https://github.com/magento/quality-patches."
       teams       = ["infrastructure"]
     }
 
