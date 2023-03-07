@@ -191,7 +191,7 @@ variable "repositories" {
       teams       = ["infrastructure"]
     }
 
-    mage-os-mirror-quality-patches = {
+    mage-osmirror-quality-patches = {
       description = "This is a Mage-OS fork of the Magento Quality Patches Tool project found at https://github.com/magento/quality-patches."
       teams       = ["infrastructure"]
     }
@@ -269,7 +269,7 @@ variable "repositories" {
 
     meta = {
       description = "This is a Mage-OS repo for documents like the contribution/review guidelines."
-      teams       = [
+      teams = [
         "tech-lead",
         "infrastructure",
         "content",
