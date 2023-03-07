@@ -186,6 +186,16 @@ variable "repositories" {
       teams       = ["infrastructure"]
     }
 
+    mage-os/mirror-magento-cloud-patches = {
+      description = "This is a Mage-OS fork of the Magento Cloud Patches project found at https://github.com/magento/magento-cloud-patches."
+      teams       = ["infrastructure"]
+    }
+
+    mage-os/mirror-quality-patches = {
+      description = "This is a Mage-OS fork of the Magento Quality Patches Tool project found at https://github.com/magento/quality-patches."
+      teams       = ["infrastructure"]
+    }
+
     mage-os-website = {
       description  = "Source of the mage-os.org website."
       teams        = ["content"]
@@ -247,9 +257,25 @@ variable "repositories" {
       teams       = ["distribution"]
     }
 
+    mageos-async-events = {
+      description = "This is a Mage-OS repo for the porting of the Magento Asynchronous Events project found at https://github.com/aligent/magento-async-events."
+      teams       = ["distribution"]
+    }
+
     namespace = {
       description = "This repository serves to register the mage-os packagist namespace."
       teams       = ["infrastructure"]
+    }
+
+    meta = {
+      description = "This is a Mage-OS repo for documents like the contribution/review guidelines."
+      teams       = [
+        "tech-lead",
+        "infrastructure",
+        "content",
+        "distribution",
+        "continuous-integration"
+      ]
     }
   }
 }
