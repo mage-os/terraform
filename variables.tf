@@ -186,12 +186,12 @@ variable "repositories" {
       teams       = ["infrastructure"]
     }
 
-    mage-os/mirror-magento-cloud-patches = {
+    mage-os-mirror-magento-cloud-patches = {
       description = "This is a Mage-OS fork of the Magento Cloud Patches project found at https://github.com/magento/magento-cloud-patches."
       teams       = ["infrastructure"]
     }
 
-    mage-os/mirror-quality-patches = {
+    mage-os-mirror-quality-patches = {
       description = "This is a Mage-OS fork of the Magento Quality Patches Tool project found at https://github.com/magento/quality-patches."
       teams       = ["infrastructure"]
     }
