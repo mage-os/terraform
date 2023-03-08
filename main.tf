@@ -110,7 +110,6 @@ resource "github_branch_protection" "repositories" {
   for_each          = var.repositories
   repository_id     = github_repository.repositories[each.key].node_id
   pattern           = "*"
-  push_restrictions = [data.github_user.mage-os-ci.node_id]
 
   required_status_checks {
     strict   = true
