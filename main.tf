@@ -86,7 +86,7 @@ resource "github_branch_protection" "mirrors" {
   pattern             = "*"
   enforce_admins      = true
   push_restrictions   = [data.github_user.mage-os-ci.node_id]
-  allows_force_pushes = false
+  allows_force_pushes = true
 }
 
 resource "github_repository" "repositories" {
