@@ -71,6 +71,11 @@ variable "mirror_repositories" {
       teams       = ["continuous-integration"]
     }
 
+    mirror-magento-cloud-patches = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-cloud-patches."
+      teams       = ["continuous-integration"]
+    }
+
     mirror-magento-composer-installer = {
       description = "Mage-OS mirror fork of https://github.com/magento/magento-composer-installer."
       teams       = ["continuous-integration"]
@@ -101,6 +106,11 @@ variable "mirror_repositories" {
       teams       = ["continuous-integration"]
     }
 
+    mirror-quality-patches = {
+      description = "Mage-OS mirror fork of https://github.com/magento/quality-patches."
+      teams       = ["continuous-integration"]
+    }
+
     mirror-security-package = {
       description = "Mage-OS mirror fork of https://github.com/magento/security-package."
       teams       = ["continuous-integration"]
@@ -115,11 +125,31 @@ variable "mirror_repositories" {
 
 variable "teams" {
   default = {
-    tech-lead = {
-      name        = "Tech-lead"
-      description = "Technical leaders"
+    content = {
+      name        = "Content"
+      description = "Content mergers"
+      members = [
+        "johnhughes1984",
+        "wigman",
+        "Vinai",
+      ]
+    }
+
+    continuous-integration = {
+      name        = "Continuous Integration"
+      description = "Continuous Integration"
+      members = [
+        "mage-os-ci",
+      ]
+    }
+
+    distribution = {
+      name        = "Distribution"
+      description = "Distribution mergers"
       members = [
         "Vinai",
+        "sprankhub",
+        "damienwebdev",
       ]
     }
 
@@ -134,31 +164,11 @@ variable "teams" {
       ]
     }
 
-    content = {
-      name        = "Content"
-      description = "Content mergers"
-      members = [
-        "johnhughes1984",
-        "wigman",
-        "Vinai",
-      ]
-    }
-
-    distribution = {
-      name        = "Distribution"
-      description = "Distribution mergers"
+    tech-lead = {
+      name        = "Tech-lead"
+      description = "Technical leaders"
       members = [
         "Vinai",
-        "sprankhub",
-        "damienwebdev",
-      ]
-    }
-
-    continuous-integration = {
-      name        = "Continuous Integration"
-      description = "Continuous Integration"
-      members = [
-        "mage-os-ci",
       ]
     }
   }
@@ -166,11 +176,6 @@ variable "teams" {
 
 variable "repositories" {
   default = {
-    terraform = {
-      description = "Terraform files for managing the organization repository permissions."
-      teams       = ["infrastructure"]
-    }
-
     dev-env-gitpod = {
       description = "Mage-OS development environment via Gitpod."
       teams       = ["infrastructure"]
@@ -194,6 +199,11 @@ variable "repositories" {
 
     mageos-adobe-stock-integration = {
       description = "This is a Mage-OS fork of the Magento Adobe Stock Integration Project found at https://github.com/magento/adobe-stock-integration."
+      teams       = ["distribution"]
+    }
+
+    mageos-async-events = {
+      description = "This is a Mage-OS repo for the porting of the Magento Asynchronous Events Project found at https://github.com/aligent/magento-async-events."
       teams       = ["distribution"]
     }
 
@@ -243,12 +253,28 @@ variable "repositories" {
     }
 
     mageos-security-package = {
-      description = "This is a Mage-OS fork of the Magento Security Extensions project found at https://github.com/magento/security-package."
+      description = "This is a Mage-OS fork of the Magento Security Extensions Project found at https://github.com/magento/security-package."
       teams       = ["distribution"]
+    }
+
+    meta = {
+      description = "This is a Mage-OS repo for documents like the contribution/review guidelines."
+      teams = [
+        "tech-lead",
+        "infrastructure",
+        "content",
+        "distribution",
+        "continuous-integration"
+      ]
     }
 
     namespace = {
       description = "This repository serves to register the mage-os packagist namespace."
+      teams       = ["infrastructure"]
+    }
+
+    terraform = {
+      description = "Terraform files for managing the organization repository permissions."
       teams       = ["infrastructure"]
     }
   }
