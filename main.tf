@@ -61,7 +61,7 @@ resource "github_team_membership" "members" {
   username = each.value.user
   # Administrators are automatically assigned maintainer role. Do it explicitly
   # to avoid state discrepancy.
-  role = contains(
+  role     = contains(
     var.administrators, each.value.user
   ) ? "maintainer" : "member"
 }
@@ -107,9 +107,9 @@ resource "github_repository" "repositories" {
 }
 
 resource "github_branch_protection" "repositories" {
-  for_each          = var.repositories
-  repository_id     = github_repository.repositories[each.key].node_id
-  pattern           = "*"
+  for_each      = var.repositories
+  repository_id = github_repository.repositories[each.key].node_id
+  pattern       = "*"
 
   required_status_checks {
     strict   = true
@@ -121,7 +121,7 @@ resource "github_branch_protection" "repositories" {
     required_approving_review_count = 1
     dismiss_stale_reviews           = true
     restrict_dismissals             = true
-    dismissal_restrictions = [
+    dismissal_restrictions          = [
       github_team.teams["tech-lead"].node_id,
     ]
   }
@@ -153,7 +153,7 @@ resource "github_repository_file" "codeowners" {
   repository = github_repository.repositories[each.key].name
   branch     = github_repository.repositories[each.key].default_branch
   file       = "CODEOWNERS"
-  content = "* ${join(
+  content    = "* ${join(
     " ",
     formatlist("@${var.organization_name}/%s", try(each.value.teams, []))
   )}"
