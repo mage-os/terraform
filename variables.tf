@@ -72,7 +72,7 @@ variable "mirror_repositories" {
     }
 
     mirror-magento-cloud-patches = {
-      description = "Mage-OS mirror fork of the https://github.com/magento/magento-cloud-patches."
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-cloud-patches."
       teams       = ["continuous-integration"]
     }
 
@@ -203,7 +203,7 @@ variable "repositories" {
     }
 
     mageos-async-events = {
-      description = "This is a Mage-OS repo for the porting of the Magento Asynchronous Events project found at https://github.com/aligent/magento-async-events."
+      description = "This is a Mage-OS repo for the porting of the Magento Asynchronous Events Project found at https://github.com/aligent/magento-async-events."
       teams       = ["distribution"]
     }
 
@@ -253,7 +253,7 @@ variable "repositories" {
     }
 
     mageos-security-package = {
-      description = "This is a Mage-OS fork of the Magento Security Extensions project found at https://github.com/magento/security-package."
+      description = "This is a Mage-OS fork of the Magento Security Extensions Project found at https://github.com/magento/security-package."
       teams       = ["distribution"]
     }
 
