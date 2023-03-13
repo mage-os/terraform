@@ -162,3 +162,17 @@ resource "github_repository_file" "codeowners" {
   commit_email        = "info+ci@mage-os.org"
   overwrite_on_create = true
 }
+
+resource "github_repository_collaborator" "collaborators" {
+  for_each = { for i in flatten([
+    for repository_name, repository in var.repositories : [
+      for collaborator in try(repository.collaborators, []) : {
+        repository   = repository_name
+        collaborator = collaborator
+      }
+    ]
+  ]) : "${i.repository}_${i.collaborator}" => i }
+  repository = github_repository.repositories[each.value.repository].name
+  username   = each.value.collaborator
+  permission = "push"
+}
