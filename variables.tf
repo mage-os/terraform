@@ -203,8 +203,9 @@ variable "repositories" {
     }
 
     mageos-async-events = {
-      description = "This is a Mage-OS repo for the porting of the Magento Asynchronous Events Project found at https://github.com/aligent/magento-async-events."
-      teams       = ["distribution"]
+      description   = "This is a Mage-OS repo for the porting of the Magento Asynchronous Events Project found at https://github.com/aligent/magento-async-events."
+      teams         = ["distribution"]
+      collaborators = ["gowrizrh"]
     }
 
     mageos-commerce-data-export = {
