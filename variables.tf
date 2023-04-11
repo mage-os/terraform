@@ -186,6 +186,11 @@ variable "repositories" {
       teams       = ["infrastructure"]
     }
 
+    github-actions = {
+      description = "Mage-OS GitHub Actions for the distribution repositories."
+      teams       = ["distribution"]
+    }
+
     infrastructure = {
       description = "Mage-OS organization infrastructure discussion and GitHub Actions."
       teams       = ["infrastructure"]
