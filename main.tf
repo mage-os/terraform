@@ -99,6 +99,7 @@ resource "github_repository" "repositories" {
   auto_init              = true
   delete_branch_on_merge = true
   homepage_url           = try(each.value.homepage_url, "")
+  archived               = try(each.value.archived, false)
 
   lifecycle {
     # Never try to replace repository in order to change its configuration.
