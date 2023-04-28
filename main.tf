@@ -73,6 +73,7 @@ resource "github_repository" "mirrors" {
   has_issues   = false
   has_projects = false
   has_wiki     = false
+  topics       = try(each.value.topics, [])
 
   lifecycle {
     # Never try to replace repository in order to change its configuration.
@@ -96,6 +97,7 @@ resource "github_repository" "repositories" {
   has_issues             = true
   has_projects           = true
   has_wiki               = false
+  topics                 = try(each.value.topics, [])
   auto_init              = true
   delete_branch_on_merge = true
   homepage_url           = try(each.value.homepage_url, "")
