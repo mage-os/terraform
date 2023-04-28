@@ -130,6 +130,12 @@ resource "github_branch_protection" "repositories" {
   }
 }
 
+resource "github_branch_default" "repositories" {
+  for_each   = { for key, value in var.repositories : key => value if try(value.default_branch, "") != "" }
+  repository = github_repository.repositories[each.key].name
+  branch     = each.value.default_branch
+}
+
 resource "github_team_repository" "teams" {
   for_each = { for i in flatten([
     for repository_name, repository in var.repositories : [
