@@ -200,6 +200,7 @@ variable "repositories" {
       description  = "Source of the mage-os.org website."
       teams        = ["content"]
       homepage_url = "https://mage-os.org"
+      archived     = true
     }
 
     mageos-adobe-stock-integration = {
