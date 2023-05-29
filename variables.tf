@@ -120,6 +120,16 @@ variable "mirror_repositories" {
       description = "Mage-OS mirror fork of https://github.com/magento/zf1."
       teams       = ["continuous-integration"]
     }
+
+    mirror-magento2-functional-testing-framework = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento2-functional-testing-framework."
+      teams       = ["continuous-integration"]
+    }
+
+    mirror-magento-coding-standard = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-coding-standard."
+      teams       = ["continuous-integration"]
+    }
   }
 }
 
@@ -263,6 +273,16 @@ variable "repositories" {
 
     mageos-security-package = {
       description = "This is a Mage-OS fork of the Magento Security Extensions Project found at https://github.com/magento/security-package."
+      teams       = ["distribution"]
+    }
+
+    mageos-magento2-functional-testing-framework = {
+      description = "This is a Mage-OS fork of the Magento 2 Functional Testing Framework found at https://github.com/magento/magento2-functional-testing-framework."
+      teams       = ["distribution"]
+    }
+
+    mageos-magento-coding-standard = {
+      description = "This is a Mage-OS fork of the Magento Coding Standrad found at https://github.com/magento/magento-coding-standard."
       teams       = ["distribution"]
     }
 
