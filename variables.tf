@@ -231,6 +231,11 @@ variable "repositories" {
       teams       = ["distribution"]
     }
 
+    mageos-composer = {
+      description = "This is a Mage-OS fork of the Magento Composer package Project found at https://github.com/magento/composer."
+      teams       = ["distribution"]
+    }
+
     mageos-composer-dependency-version-audit-plugin = {
       description = "This is a Mage-OS fork of the validating Magento packages through a composer plugin Project found at https://github.com/magento/composer-dependency-version-audit-plugin."
       teams       = ["distribution"]
