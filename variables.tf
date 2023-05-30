@@ -135,6 +135,14 @@ variable "mirror_repositories" {
 
 variable "teams" {
   default = {
+    async-events = {
+      name        = "async-events"
+      description = "Team collaborating on the mageos-async-events repository."
+      members = [
+        "gowrizrh",
+      ]
+    }
+
     content = {
       name        = "Content"
       description = "Content mergers"
@@ -221,8 +229,7 @@ variable "repositories" {
 
     mageos-async-events = {
       description    = "This is a Mage-OS repo for the porting of the Magento Asynchronous Events Project found at https://github.com/aligent/magento-async-events."
-      teams          = ["distribution"]
-      collaborators  = ["gowrizrh"]
+      teams          = ["distribution", "async-events"]
       default_branch = "3.x"
     }
 
