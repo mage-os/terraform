@@ -1,4 +1,4 @@
-# Provided in environment as TF_VAR_* variables
+# Provided in environment as TF_VAR_* variables 
 variable "github_app_id" { default = null }
 variable "github_app_installation_id" { default = null }
 variable "github_app_pem_file" { default = null }
@@ -76,6 +76,11 @@ variable "mirror_repositories" {
       teams       = ["continuous-integration"]
     }
 
+    mirror-magento-coding-standard = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-coding-standard."
+      teams       = ["continuous-integration"]
+    }
+
     mirror-magento-composer-installer = {
       description = "Mage-OS mirror fork of https://github.com/magento/magento-composer-installer."
       teams       = ["continuous-integration"]
@@ -83,6 +88,11 @@ variable "mirror_repositories" {
 
     mirror-magento2 = {
       description = "Mage-OS mirror fork of https://github.com/magento/magento2."
+      teams       = ["continuous-integration"]
+    }
+
+    mirror-magento2-functional-testing-framework = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento2-functional-testing-framework."
       teams       = ["continuous-integration"]
     }
 
@@ -118,16 +128,6 @@ variable "mirror_repositories" {
 
     mirror-zf1 = {
       description = "Mage-OS mirror fork of https://github.com/magento/zf1."
-      teams       = ["continuous-integration"]
-    }
-
-    mirror-magento2-functional-testing-framework = {
-      description = "Mage-OS mirror fork of https://github.com/magento/magento2-functional-testing-framework."
-      teams       = ["continuous-integration"]
-    }
-
-    mirror-magento-coding-standard = {
-      description = "Mage-OS mirror fork of https://github.com/magento/magento-coding-standard."
       teams       = ["continuous-integration"]
     }
   }
@@ -256,6 +256,11 @@ variable "repositories" {
       teams       = ["distribution"]
     }
 
+    mageos-magento-coding-standard = {
+      description = "This is a Mage-OS fork of the Magento Coding Standrad found at https://github.com/magento/magento-coding-standard."
+      teams       = ["distribution"]
+    }
+
     mageos-magento-composer-installer = {
       description = "This is a Mage-OS fork of the Magento Composer Installer Project found at https://github.com/magento/magento-composer-installer."
       teams       = ["distribution"]
@@ -263,6 +268,11 @@ variable "repositories" {
 
     mageos-magento2 = {
       description = "Work in progress."
+      teams       = ["distribution"]
+    }
+
+    mageos-magento2-functional-testing-framework = {
+      description = "This is a Mage-OS fork of the Magento 2 Functional Testing Framework found at https://github.com/magento/magento2-functional-testing-framework."
       teams       = ["distribution"]
     }
 
@@ -278,16 +288,6 @@ variable "repositories" {
 
     mageos-security-package = {
       description = "This is a Mage-OS fork of the Magento Security Extensions Project found at https://github.com/magento/security-package."
-      teams       = ["distribution"]
-    }
-
-    mageos-magento2-functional-testing-framework = {
-      description = "This is a Mage-OS fork of the Magento 2 Functional Testing Framework found at https://github.com/magento/magento2-functional-testing-framework."
-      teams       = ["distribution"]
-    }
-
-    mageos-magento-coding-standard = {
-      description = "This is a Mage-OS fork of the Magento Coding Standrad found at https://github.com/magento/magento-coding-standard."
       teams       = ["distribution"]
     }
 
