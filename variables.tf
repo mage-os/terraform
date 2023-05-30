@@ -76,6 +76,11 @@ variable "mirror_repositories" {
       teams       = ["continuous-integration"]
     }
 
+    mirror-magento-coding-standard = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-coding-standard."
+      teams       = ["continuous-integration"]
+    }
+
     mirror-magento-composer-installer = {
       description = "Mage-OS mirror fork of https://github.com/magento/magento-composer-installer."
       teams       = ["continuous-integration"]
@@ -83,6 +88,11 @@ variable "mirror_repositories" {
 
     mirror-magento2 = {
       description = "Mage-OS mirror fork of https://github.com/magento/magento2."
+      teams       = ["continuous-integration"]
+    }
+
+    mirror-magento2-functional-testing-framework = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento2-functional-testing-framework."
       teams       = ["continuous-integration"]
     }
 
@@ -221,6 +231,11 @@ variable "repositories" {
       teams       = ["distribution"]
     }
 
+    mageos-composer = {
+      description = "This is a Mage-OS fork of the Magento Composer package Project found at https://github.com/magento/composer."
+      teams       = ["distribution"]
+    }
+
     mageos-composer-dependency-version-audit-plugin = {
       description = "This is a Mage-OS fork of the validating Magento packages through a composer plugin Project found at https://github.com/magento/composer-dependency-version-audit-plugin."
       teams       = ["distribution"]
@@ -241,6 +256,11 @@ variable "repositories" {
       teams       = ["distribution"]
     }
 
+    mageos-magento-coding-standard = {
+      description = "This is a Mage-OS fork of the Magento Coding Standrad found at https://github.com/magento/magento-coding-standard."
+      teams       = ["distribution"]
+    }
+
     mageos-magento-composer-installer = {
       description = "This is a Mage-OS fork of the Magento Composer Installer Project found at https://github.com/magento/magento-composer-installer."
       teams       = ["distribution"]
@@ -248,6 +268,11 @@ variable "repositories" {
 
     mageos-magento2 = {
       description = "Work in progress."
+      teams       = ["distribution"]
+    }
+
+    mageos-magento2-functional-testing-framework = {
+      description = "This is a Mage-OS fork of the Magento 2 Functional Testing Framework found at https://github.com/magento/magento2-functional-testing-framework."
       teams       = ["distribution"]
     }
 
