@@ -150,6 +150,7 @@ variable "teams" {
         "johnhughes1984",
         "wigman",
         "Vinai",
+        "DavidLambauer"
       ]
     }
 
@@ -194,6 +195,11 @@ variable "teams" {
 
 variable "repositories" {
   default = {
+    devdocs = {
+      description = "Mage-OS devdocs"
+      teams       = ["infrastructure", "content"]
+      topics      = ["mage-os", "documentation", "ecommerce", "magento2", "adobecommerce"]
+    },
     dev-env-gitpod = {
       description = "Mage-OS development environment via Gitpod."
       teams       = ["infrastructure"]
