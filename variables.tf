@@ -244,7 +244,7 @@ variable "repositories" {
     infrastructure = {
       description = "Mage-OS organization infrastructure discussion and GitHub Actions."
       teams       = ["infrastructure"]
-      topics      = ["mage-os", "magento", "terraform", "IaC", "magento2", "adobecommerce"]
+      topics      = ["mage-os", "magento", "terraform", "magento2", "adobecommerce"]
     }
 
     mage-os-website = {
