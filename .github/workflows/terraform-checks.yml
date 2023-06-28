@@ -21,7 +21,7 @@ jobs:
           result-encoding: string
           script: |
             const { owner, repo, number } = context.issue;
-            const pr = await github.pulls.get({
+            const pr = await github.rest.pulls.get({
               owner,
               repo,
               pull_number: number,
