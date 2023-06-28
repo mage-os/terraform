@@ -16,12 +16,12 @@ jobs:
     steps:
       - name: Get pull request ref
         id: sha
-        uses: actions/github-script@0.9.0
+        uses: actions/github-script@v6
         with:
           result-encoding: string
           script: |
             const { owner, repo, number } = context.issue;
-            const pr = await github.pulls.get({
+            const pr = await github.rest.pulls.get({
               owner,
               repo,
               pull_number: number,
@@ -34,9 +34,7 @@ jobs:
           ref: ${{ steps.sha.outputs.result }}
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: 1.1.6
+        uses: hashicorp/setup-terraform@v2
 
       - name: Terraform Format
         id: fmt
