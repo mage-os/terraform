@@ -170,4 +170,11 @@ resource "github_repository_file" "codeowners" {
   commit_author       = "mage-os-ci"
   commit_email        = "info@mage-os.org"
   overwrite_on_create = true
+
+  lifecycle {
+    ignore_changes = [
+      commit_author,
+      commit_email,
+    ]
+  }
 }
