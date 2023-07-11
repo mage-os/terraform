@@ -264,7 +264,7 @@ variable "repositories" {
     }
 
     mageos-magento-coding-standard = {
-      description = "This is a Mage-OS fork of the Magento Coding Standrad found at https://github.com/magento/magento-coding-standard."
+      description = "This is a Mage-OS fork of the Magento Coding Standard found at https://github.com/magento/magento-coding-standard."
       teams       = ["distribution"]
     }
 
