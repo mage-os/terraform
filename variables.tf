@@ -100,6 +100,41 @@ variable "mirror_repositories" {
       topics      = ["mage-os", "mirror", "magento", "php", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    mirror-magento-zend-cache = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-zend-cache."
+      teams       = ["continuous-integration"]
+    }
+
+    mirror-magento-zend-db = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-zend-db."
+      teams       = ["continuous-integration"]
+    }
+
+    mirror-magento-zend-exception = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-zend-exception."
+      teams       = ["continuous-integration"]
+    }
+
+    mirror-magento-zend-loader = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-zend-loader."
+      teams       = ["continuous-integration"]
+    }
+
+    mirror-magento-zend-log = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-zend-log."
+      teams       = ["continuous-integration"]
+    }
+
+    mirror-magento-zend-memory = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-zend-memory."
+      teams       = ["continuous-integration"]
+    }
+
+    mirror-magento-zend-pdf = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-zend-pdf."
+      teams       = ["continuous-integration"]
+    }
+
     mirror-magento2 = {
       description = "Mage-OS mirror fork of https://github.com/magento/magento2."
       teams       = ["continuous-integration"]
@@ -309,7 +344,7 @@ variable "repositories" {
     }
 
     mageos-magento-coding-standard = {
-      description = "This is a Mage-OS fork of the Magento Coding Standrad found at https://github.com/magento/magento-coding-standard."
+      description = "This is a Mage-OS fork of the Magento Coding Standard found at https://github.com/magento/magento-coding-standard."
       teams       = ["distribution"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
@@ -318,6 +353,41 @@ variable "repositories" {
       description = "This is a Mage-OS fork of the Magento Composer Installer Project found at https://github.com/magento/magento-composer-installer."
       teams       = ["distribution"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+    }
+
+    mageos-magento-zend-cache = {
+      description = "This is a Mage-OS fork of the Zend_Cache Project found at https://github.com/magento/magento-zend-cache."
+      teams       = ["distribution"]
+    }
+
+    mageos-magento-zend-db = {
+      description = "This is a Mage-OS fork of the Zend_Db Project found at https://github.com/magento/magento-zend-db."
+      teams       = ["distribution"]
+    }
+
+    mageos-magento-zend-exception = {
+      description = "This is a Mage-OS fork of the Zend_Exception Project found at https://github.com/magento/magento-zend-exception."
+      teams       = ["distribution"]
+    }
+
+    mageos-magento-zend-loader = {
+      description = "This is a Mage-OS fork of the Zend_Loader Project found at https://github.com/magento/magento-zend-loader."
+      teams       = ["distribution"]
+    }
+
+    mageos-magento-zend-log = {
+      description = "This is a Mage-OS fork of the Zend_Log Project found at https://github.com/magento/magento-zend-log."
+      teams       = ["distribution"]
+    }
+
+    mageos-magento-zend-memory = {
+      description = "This is a Mage-OS fork of the Zend_Memory Project found at https://github.com/magento/magento-zend-memory."
+      teams       = ["distribution"]
+    }
+
+    mageos-magento-zend-pdf = {
+      description = "This is a Mage-OS fork of the Zend_Pdf Project found at https://github.com/magento/magento-zend-pdf."
+      teams       = ["distribution"]
     }
 
     mageos-magento2 = {
