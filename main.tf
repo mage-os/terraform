@@ -184,10 +184,10 @@ resource "github_repository_file" "merge-upstream-changes" {
     for key, value in var.repositories : key => value
     if startswith(key, "mageos-") && contains(keys(github_repository.mirrors), replace(key, "mageos-", "mirror-"))
   }
-  repository = github_repository.repositories[each.key].name
-  branch     = github_repository.repositories[each.key].default_branch
-  file       = ".github/workflows/merge-upstream-changes.yml"
-  content = <<-EOT
+  repository          = github_repository.repositories[each.key].name
+  branch              = github_repository.repositories[each.key].default_branch
+  file                = ".github/workflows/merge-upstream-changes.yml"
+  content             = <<-EOT
 on:
   schedule:
     - cron: "10 10 * * *" # This gives mirror sync, which runs at 9:57, some time to complete.
