@@ -208,7 +208,8 @@ variable "teams" {
         "johnhughes1984",
         "wigman",
         "Vinai",
-        "DavidLambauer"
+        "DavidLambauer",
+        "johnprendergast"
       ]
     }
 
