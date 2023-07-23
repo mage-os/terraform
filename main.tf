@@ -178,3 +178,42 @@ resource "github_repository_file" "codeowners" {
     ]
   }
 }
+
+resource "github_repository_file" "merge-upstream-changes" {
+  for_each = {
+    for key, value in var.repositories : key => value
+    if startswith(key, "mageos-") && contains(keys(github_repository.mirrors), replace(key, "mageos-", "mirror-"))
+  }
+  repository          = github_repository.repositories[each.key].name
+  branch              = github_repository.repositories[each.key].default_branch
+  file                = ".github/workflows/merge-upstream-changes.yml"
+  content             = <<-EOT
+on:
+  schedule:
+    - cron: "10 10 * * *" # This gives mirror sync, which runs at 9:57, some time to complete.
+  workflow_dispatch: {}
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  merge-from-mirror:
+    uses: mage-os/infrastructure/.github/workflows/merge-upstream-changes.yml@main
+    with:
+      upstream: ${github_repository.mirrors[replace(each.key, "mageos-", "mirror-")].http_clone_url}
+      matrix: '{ branch: ["${github_repository.mirrors[replace(each.key, "mageos-", "mirror-")].default_branch}"] }'
+    secrets:
+      DISCORD_WEBHOOK: $${{ secrets.DISCORD_WEBHOOK }}
+      MAGEOS_GITHUB_TOKEN: $${{ secrets.MAGE_OS_CI_TOKEN }}
+EOT
+  commit_message      = "Managed by Terraform"
+  commit_author       = "mage-os-ci"
+  commit_email        = "info@mage-os.org"
+  overwrite_on_create = true
+
+  lifecycle {
+    ignore_changes = [
+      commit_author,
+      commit_email,
+    ]
+  }
+}
