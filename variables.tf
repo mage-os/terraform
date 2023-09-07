@@ -278,7 +278,7 @@ variable "repositories" {
 
     github-actions = {
       description = "Mage-OS GitHub Actions for the distribution repositories."
-      teams       = ["distribution"]
+      teams       = ["infrastructure"]
       topics      = ["mage-os", "devops", "qa", "ecommerce", "ci", "actions", "magento2", "github-actions", "adobecommerce"]
     }
 
