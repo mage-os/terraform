@@ -308,9 +308,21 @@ variable "repositories" {
       topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    mageos-async-events-admin-ui = {
+      description = "This module provides an admin UI for the Mage-OS Asynchronous Events module."
+      teams       = ["distribution", "async-events"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+    }
+
     mageos-commerce-data-export = {
       description = "This is a Mage-OS fork of the Magento Commerce Data Export Project found at https://github.com/magento/commerce-data-export."
       teams       = ["distribution"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+    }
+
+    mageos-common-async-events = {
+      description = "This module implements the most common events like order creation or customer change for the Mage-OS Asynchronous Events module."
+      teams       = ["distribution", "async-events"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
