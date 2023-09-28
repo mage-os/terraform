@@ -109,6 +109,15 @@ resource "github_repository" "repositories" {
   }
 }
 
+resource "github_branch_protection" "repositories-release-please" {
+  for_each      = { for key, value in var.repositories : key => value if try(value.release_please_branch, "") != "" }
+  repository_id = github_repository.repositories[each.key].node_id
+  pattern       = each.value.release_please_branch
+
+  push_restrictions    = [data.github_user.mage-os-ci.node_id]
+  force_push_bypassers = [data.github_user.mage-os-ci.node_id]
+}
+
 resource "github_branch_protection" "repositories" {
   for_each      = var.repositories
   repository_id = github_repository.repositories[each.key].node_id
