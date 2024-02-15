@@ -64,6 +64,12 @@ variable "mirror_repositories" {
       topics      = ["mage-os", "mirror", "magento", "php", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    mirror-data-migration-tool = {
+      description = "Mage-OS mirror fork of https://github.com/magento/data-migration-tool."
+      teams       = ["continuous-integration"]
+      topics      = ["mage-os", "mirror", "magento", "php", "ecommerce", "magento2", "adobecommerce"]
+    }
+
     mirror-devdocs = {
       description = "Mage-OS mirror fork of https://github.com/magento/devdocs."
       teams       = ["continuous-integration"]
@@ -347,6 +353,12 @@ variable "repositories" {
 
     mageos-composer-root-update-plugin = {
       description = "This is a Mage-OS fork of the Magento Composer Root Update Plugin found at https://github.com/magento/composer-root-update-plugin."
+      teams       = ["distribution"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+    }
+
+    mageos-data-migration-tool = {
+      description = "This is a Mage-OS fork of the Magento 2 Data Migration Tool found at https://github.com/magento/data-migration-tool."
       teams       = ["distribution"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
