@@ -434,6 +434,12 @@ variable "repositories" {
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    mageos-PHPCompatibilityFork = {
+      description = "This is a Mage-OS fork of the Magento 2 PHPCompatibility fork found at https://github.com/magento/PHPCompatibilityFork."
+      teams       = ["distribution"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+    }
+
     mageos-security-package = {
       description = "This is a Mage-OS fork of the Magento Security Extensions Project found at https://github.com/magento/security-package."
       teams       = ["distribution"]
