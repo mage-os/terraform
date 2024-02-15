@@ -171,6 +171,12 @@ variable "mirror_repositories" {
       topics      = ["mage-os", "mirror", "magento", "php", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    mirror-PHPCompatibilityFork = {
+      description = "Mage-OS mirror fork of https://github.com/magento/PHPCompatibilityFork."
+      teams       = ["continuous-integration"]
+      topics      = ["mage-os", "mirror", "magento", "php", "ecommerce", "magento2", "adobecommerce"]
+    }
+
     mirror-quality-patches = {
       description = "Mage-OS mirror fork of https://github.com/magento/quality-patches."
       teams       = ["continuous-integration"]
@@ -424,6 +430,12 @@ variable "repositories" {
 
     mageos-magento2-sample-data = {
       description = "This is a Mage-OS fork of the Magento 2 Sample Data Project found at https://github.com/magento/magento2-sample-data."
+      teams       = ["distribution"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+    }
+
+    mageos-PHPCompatibilityFork = {
+      description = "This is a Mage-OS fork of the Magento 2 PHPCompatibility fork found at https://github.com/magento/PHPCompatibilityFork."
       teams       = ["distribution"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
