@@ -171,6 +171,12 @@ variable "mirror_repositories" {
       topics      = ["mage-os", "mirror", "magento", "php", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    mirror-PHPCompatibilityFork = {
+      description = "Mage-OS mirror fork of https://github.com/magento/PHPCompatibilityFork."
+      teams       = ["continuous-integration"]
+      topics      = ["mage-os", "mirror", "magento", "php", "ecommerce", "magento2", "adobecommerce"]
+    }
+
     mirror-quality-patches = {
       description = "Mage-OS mirror fork of https://github.com/magento/quality-patches."
       teams       = ["continuous-integration"]
