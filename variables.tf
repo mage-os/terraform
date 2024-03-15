@@ -357,12 +357,6 @@ variable "repositories" {
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
-    mageos-data-migration-tool = {
-      description = "This is a Mage-OS fork of the Magento 2 Data Migration Tool found at https://github.com/magento/data-migration-tool."
-      teams       = ["distribution"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
-    }
-
     mageos-inventory = {
       description = "This is a Mage-OS fork of the Magento Inventory Project (a.k.a MSI) found at https://github.com/magento/inventory."
       teams       = ["distribution"]
