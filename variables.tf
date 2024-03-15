@@ -64,6 +64,12 @@ variable "mirror_repositories" {
       topics      = ["mage-os", "mirror", "magento", "php", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    mirror-data-migration-tool = {
+      description = "Mage-OS mirror fork of https://github.com/magento/data-migration-tool."
+      teams       = ["continuous-integration"]
+      topics      = ["mage-os", "mirror", "magento", "php", "ecommerce", "magento2", "adobecommerce"]
+    }
+
     mirror-devdocs = {
       description = "Mage-OS mirror fork of https://github.com/magento/devdocs."
       teams       = ["continuous-integration"]
