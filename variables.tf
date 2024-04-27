@@ -315,6 +315,12 @@ variable "repositories" {
       topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    mageos-async-events-sinks = {
+      description    = "This is a mono repository for different event sinks for mageos-async-events."
+      teams          = ["distribution", "async-events"]
+      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+    }
+
     mageos-async-events-admin-ui = {
       description = "This module provides an admin UI for the Mage-OS Asynchronous Events module."
       teams       = ["distribution", "async-events"]
