@@ -316,9 +316,9 @@ variable "repositories" {
     }
 
     mageos-async-events-sinks = {
-      description    = "This is a mono repository for different event sinks for mageos-async-events."
-      teams          = ["distribution", "async-events"]
-      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      description = "This is a mono repository for different event sinks for mageos-async-events."
+      teams       = ["distribution", "async-events"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
     mageos-async-events-admin-ui = {
