@@ -321,6 +321,24 @@ variable "repositories" {
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    mageos-async-events-aws = {
+      description = "This module provides events integrations to AWS."
+      teams       = ["distribution", "async-events"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "aws"]
+    }
+
+    mageos-async-events-azure = {
+      description = "This module provides events integrations to Azure."
+      teams       = ["distribution", "async-events"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "azure"]
+    }
+
+    mageos-async-events-gcp = {
+      description = "This module provides events integrations to GCP."
+      teams       = ["distribution", "async-events"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "gcp"]
+    }
+
     mageos-async-events-admin-ui = {
       description = "This module provides an admin UI for the Mage-OS Asynchronous Events module."
       teams       = ["distribution", "async-events"]
