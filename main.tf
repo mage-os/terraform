@@ -7,7 +7,7 @@ terraform {
   required_providers {
     github = {
       source  = "integrations/github"
-      version = "~> 5.25"
+      version = "~> 6.2"
     }
   }
 }
@@ -82,11 +82,14 @@ resource "github_repository" "mirrors" {
 }
 
 resource "github_branch_protection" "mirrors" {
-  for_each            = var.mirror_repositories
-  repository_id       = github_repository.mirrors[each.key].node_id
-  pattern             = "*"
-  enforce_admins      = true
-  push_restrictions   = [data.github_user.mage-os-ci.node_id]
+  for_each       = var.mirror_repositories
+  repository_id  = github_repository.mirrors[each.key].node_id
+  pattern        = "*"
+  enforce_admins = true
+  restrict_pushes {
+    blocks_creations = false
+    push_allowances  = [data.github_user.mage-os-ci.node_id]
+  }
   allows_force_pushes = true
 }
 
@@ -113,8 +116,10 @@ resource "github_branch_protection" "repositories-release-please" {
   for_each      = { for key, value in var.repositories : key => value if try(value.release_please_branch, "") != "" }
   repository_id = github_repository.repositories[each.key].node_id
   pattern       = each.value.release_please_branch
-
-  push_restrictions    = [data.github_user.mage-os-ci.node_id]
+  restrict_pushes {
+    blocks_creations = false
+    push_allowances  = [data.github_user.mage-os-ci.node_id]
+  }
   force_push_bypassers = [data.github_user.mage-os-ci.node_id]
 }
 
