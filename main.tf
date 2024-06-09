@@ -142,6 +142,10 @@ resource "github_branch_protection" "repositories" {
       github_team.teams["tech-lead"].node_id,
     ]
   }
+
+  restrict_pushes {
+    push_allowances = try(each.value.mono_repository, false) ? [data.github_user.mage-os-ci.node_id] : []
+  }
 }
 
 resource "github_branch_default" "repositories" {
