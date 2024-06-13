@@ -328,21 +328,24 @@ variable "repositories" {
     }
 
     mageos-async-events-aws = {
-      description = "This module provides events integrations to AWS."
-      teams       = ["distribution", "async-events"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "aws"]
+      description         = "This module provides events integrations to AWS."
+      teams               = ["distribution", "async-events"]
+      topics              = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "aws"]
+      is_part_of_monorepo = true
     }
 
     mageos-async-events-azure = {
-      description = "This module provides events integrations to Azure."
-      teams       = ["distribution", "async-events"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "azure"]
+      description         = "This module provides events integrations to Azure."
+      teams               = ["distribution", "async-events"]
+      topics              = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "azure"]
+      is_part_of_monorepo = true
     }
 
     mageos-async-events-gcp = {
-      description = "This module provides events integrations to GCP."
-      teams       = ["distribution", "async-events"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "gcp"]
+      description         = "This module provides events integrations to GCP."
+      teams               = ["distribution", "async-events"]
+      topics              = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "gcp"]
+      is_part_of_monorepo = true
     }
 
     mageos-async-events-admin-ui = {
