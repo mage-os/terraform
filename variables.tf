@@ -210,6 +210,7 @@ variable "teams" {
       description = "Team collaborating on the mageos-async-events repository."
       members = [
         "gowrizrh",
+        "avstudnitz",
       ]
     }
 
