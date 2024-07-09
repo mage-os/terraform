@@ -252,6 +252,7 @@ variable "teams" {
         "sprankhub",
         "damienwebdev",
         "DavidLambauer",
+        "cmuench",
       ]
     }
 
