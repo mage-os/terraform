@@ -254,6 +254,7 @@ variable "teams" {
         "damienwebdev",
         "DavidLambauer",
         "rhoerr",
+        "cmuench",
       ]
     }
 
