@@ -241,6 +241,7 @@ variable "teams" {
         "Vinai",
         "sprankhub",
         "damienwebdev",
+        "rhoerr",
       ]
     }
 
@@ -252,6 +253,7 @@ variable "teams" {
         "sprankhub",
         "damienwebdev",
         "DavidLambauer",
+        "rhoerr",
         "cmuench",
       ]
     }
