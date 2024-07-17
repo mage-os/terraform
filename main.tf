@@ -144,7 +144,9 @@ resource "github_branch_protection" "repositories" {
   }
 
   restrict_pushes {
-    push_allowances = try(each.value.is_part_of_monorepo, false) ? [data.github_user.mage-os-ci.node_id] : []
+    push_allowances = try(each.value.is_part_of_monorepo, false)
+      ? [data.github_user.mage-os-ci.node_id]
+      : github_repository.repositories[each.key].teams
   }
 }
 
