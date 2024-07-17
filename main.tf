@@ -128,6 +128,9 @@ resource "github_branch_protection" "repositories" {
   repository_id = github_repository.repositories[each.key].node_id
   pattern       = "*"
 
+  codeowners      = github_repository.repositories[each.key].teams
+  mage_os_ci_node = data.github_user.mage-os-ci.node_id
+
   required_status_checks {
     strict   = true
     contexts = []
@@ -144,9 +147,7 @@ resource "github_branch_protection" "repositories" {
   }
 
   restrict_pushes {
-    push_allowances = try(each.value.is_part_of_monorepo, false)
-      ? [data.github_user.mage-os-ci.node_id]
-      : github_repository.repositories[each.key].teams
+    push_allowances = try(each.value.is_part_of_monorepo, false) ? [mage_os_ci_node] : codeowners
   }
 }
 
