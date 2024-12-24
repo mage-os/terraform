@@ -485,6 +485,12 @@ variable "repositories" {
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    magento-gitpod = {
+      description = "Mage-OS Mirror & Nightly Build Instances In One Click"
+      teams       = ["infrastructure"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+    }
+
     meta = {
       description = "This is a Mage-OS repo for documents like the contribution/review guidelines."
       teams = [
