@@ -235,3 +235,61 @@ EOT
     ]
   }
 }
+
+resource "github_repository_file" "sansec_ecomscan_workflow" {
+  for_each   = var.repositories
+  repository = github_repository.repositories[each.key].name
+  branch     = github_repository.repositories[each.key].default_branch
+  file       = ".github/workflows/sansec-ecomscan.yml"
+  content    = <<-EOT
+name: Sansec eComscan Security Scan
+
+on:
+  push:
+  pull_request_target:
+  workflow_dispatch:
+
+jobs:
+  run-ecomscan:
+    name: Run Sansec eComscan
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: $${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+
+      - name: Download eComscan
+        run: wget https://ecomscan.com/downloads/linux-amd64/ecomscan
+
+      - name: Fix permissions
+        run: chmod +x ecomscan
+
+      - name: Run eComscan
+        env:
+          ECOMSCAN_KEY: $${{ secrets.SANSEC_LICENSE_KEY }}
+        run: |
+          output=$$(./ecomscan --no-auto-update --skip-database --deep --format=csv .)
+          if [ -n "$$output" ]; then
+            echo "Security issues found:"
+            echo "$$output"
+            exit 1
+          fi
+EOT
+  commit_message      = "Add Sansec eComscan workflow"
+  commit_author       = "mage-os-ci"
+  commit_email        = "info@mage-os.org"
+  overwrite_on_create = true
+
+  lifecycle {
+    ignore_changes = [
+      commit_author,
+      commit_email,
+    ]
+  }
+}
