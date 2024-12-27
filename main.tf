@@ -237,11 +237,11 @@ EOT
 }
 
 resource "github_repository_file" "sansec_ecomscan_workflow" {
-  for_each   = var.repositories
-  repository = github_repository.repositories[each.key].name
-  branch     = github_repository.repositories[each.key].default_branch
-  file       = ".github/workflows/sansec-ecomscan.yml"
-  content    = <<-EOT
+  for_each            = var.repositories
+  repository          = github_repository.repositories[each.key].name
+  branch              = github_repository.repositories[each.key].default_branch
+  file                = ".github/workflows/sansec-ecomscan.yml"
+  content             = <<-EOT
 name: Sansec eComscan Security Scan
 
 on:
