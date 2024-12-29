@@ -20,6 +20,7 @@ jobs:
       )
     runs-on: ubuntu-latest
     env:
+      TF_LOG: DEBUG
       # Google Cloud Storage state backend
       GOOGLE_APPLICATION_CREDENTIALS_DATA: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_DATA }}
       GOOGLE_APPLICATION_CREDENTIALS: '/tmp/tf-google-application-credentials.json'
