@@ -237,7 +237,10 @@ EOT
 }
 
 resource "github_repository_file" "sansec_ecomscan_workflow" {
-  for_each            = var.repositories
+  for_each = {
+    for k, v in var.repositories : k => v
+    if !github_repository.repositories[k].archived
+  }
   repository          = github_repository.repositories[each.key].name
   branch              = github_repository.repositories[each.key].default_branch
   file                = ".github/workflows/sansec-ecomscan.yml"
