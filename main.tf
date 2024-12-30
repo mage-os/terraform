@@ -244,7 +244,7 @@ resource "github_repository_file" "sansec_ecomscan_workflow" {
   repository          = github_repository.repositories[each.key].name
   branch              = github_repository.repositories[each.key].default_branch
   file                = ".github/workflows/sansec-ecomscan.yml"
-  content             = <<-EOT
+content = <<-EOT
 name: Sansec eComscan Security Scan
 
 on:
@@ -264,7 +264,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: $${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
 
       - name: Download eComscan
@@ -275,12 +275,12 @@ jobs:
 
       - name: Run eComscan
         env:
-          ECOMSCAN_KEY: $${{ secrets.SANSEC_LICENSE_KEY }}
+          ECOMSCAN_KEY: ${{ secrets.SANSEC_LICENSE_KEY }}
         run: |
-          output=$$(./ecomscan --no-auto-update --skip-database --deep --format=csv .)
-          if [ -n "$$output" ]; then
+          output=$(./ecomscan --no-auto-update --skip-database --deep --format=csv .)
+          if [ -n "$output" ]; then
             echo "Security issues found:"
-            echo "$$output"
+            echo "$output"
             exit 1
           fi
 EOT
