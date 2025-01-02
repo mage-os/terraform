@@ -264,7 +264,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: $${{ github.event.pull_request.head.sha }}
           persist-credentials: false
 
       - name: Download eComscan
@@ -275,7 +275,7 @@ jobs:
 
       - name: Run eComscan
         env:
-          ECOMSCAN_KEY: ${{ secrets.SANSEC_LICENSE_KEY }}
+          ECOMSCAN_KEY: $${{ secrets.SANSEC_LICENSE_KEY }}
         run: |
           output=$(./ecomscan --no-auto-update --skip-database --deep --format=csv .)
           if [ -n "$output" ]; then
