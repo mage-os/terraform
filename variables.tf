@@ -484,7 +484,7 @@ variable "repositories" {
       description = "Mage-OS Mirror & Nightly Build Instances In One Click"
       teams       = ["infrastructure"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
-      archived     = true
+      archived    = true
     }
 
     meta = {
