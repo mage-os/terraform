@@ -277,6 +277,7 @@ variable "repositories" {
       teams       = ["infrastructure", "content"]
       topics      = ["mage-os", "documentation", "ecommerce", "magento2", "adobecommerce"]
     },
+
     devdocs = {
       description = "Mage-OS devdocs"
       teams       = ["infrastructure", "content"]
