@@ -272,6 +272,12 @@ variable "teams" {
 
 variable "repositories" {
   default = {
+    dashboard = {
+      description = "Mage-OS Dashboard showing an overview of all repositories, issues and pull requests."
+      teams       = ["infrastructure"]
+      topics      = ["mage-os", "ecommerce", "magento2", "adobecommerce"]
+    },
+
     devdocs-website = {
       description = "Mage-OS devdocs website"
       teams       = ["infrastructure", "content"]
