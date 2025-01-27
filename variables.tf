@@ -272,21 +272,23 @@ variable "teams" {
 
 variable "repositories" {
   default = {
+    dashboard = {
+      description = "Mage-OS Dashboard showing an overview of all repositories, issues and pull requests."
+      teams       = ["infrastructure"]
+      topics      = ["mage-os", "ecommerce", "magento2", "adobecommerce"]
+    },
+
     devdocs-website = {
       description = "Mage-OS devdocs website"
       teams       = ["infrastructure", "content"]
       topics      = ["mage-os", "documentation", "ecommerce", "magento2", "adobecommerce"]
     },
+
     devdocs = {
       description = "Mage-OS devdocs"
       teams       = ["infrastructure", "content"]
       topics      = ["mage-os", "documentation", "ecommerce", "magento2", "adobecommerce"]
     },
-    dev-env-gitpod = {
-      description = "Mage-OS development environment via Gitpod."
-      teams       = ["infrastructure"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
-    }
 
     generate-mirror-repo-js = {
       description = "Mage-OS packaging implementation (JavaScript)."
@@ -489,6 +491,7 @@ variable "repositories" {
       description = "Mage-OS Mirror & Nightly Build Instances In One Click"
       teams       = ["infrastructure"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      archived    = true
     }
 
     meta = {
