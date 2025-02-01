@@ -1,4 +1,4 @@
-# opentofu
+# terraform
 OpenTofu files for managing organization infrastructure. See `INSTALL.md` for instructions on how to prepare this setup from scratch on GitHub.
 
 ## Adding Users To Teams

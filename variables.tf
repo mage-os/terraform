@@ -512,7 +512,7 @@ variable "repositories" {
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
-    opentofu = {
+    terraform = {
       description = "OpenTofu files for managing the organization repository permissions."
       teams       = ["infrastructure"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
