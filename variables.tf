@@ -306,7 +306,7 @@ variable "repositories" {
     infrastructure = {
       description = "Mage-OS organization infrastructure discussion and GitHub Actions."
       teams       = ["infrastructure"]
-      topics      = ["mage-os", "magento", "terraform", "magento2", "adobecommerce"]
+      topics      = ["mage-os", "magento", "opentofu", "terraform", "magento2", "adobecommerce"]
     }
 
     mage-os-website = {
@@ -513,7 +513,7 @@ variable "repositories" {
     }
 
     terraform = {
-      description = "Terraform files for managing the organization repository permissions."
+      description = "OpenTofu files for managing the organization repository permissions."
       teams       = ["infrastructure"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
