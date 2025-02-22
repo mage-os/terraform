@@ -176,7 +176,7 @@ resource "github_team_repository" "tech-lead" {
 }
 
 resource "github_repository_file" "codeowners" {
-  for_each = var.repositories
+  for_each   = var.repositories
   repository = github_repository.repositories[each.key].name
   branch     = github_repository.repositories[each.key].default_branch
   file       = "CODEOWNERS"
