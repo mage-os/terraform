@@ -176,7 +176,7 @@ resource "github_team_repository" "tech-lead" {
 }
 
 resource "github_repository_file" "codeowners" {
-  for_each   = { for k, v in var.repositories : k => v if lookup(v, "archived", false) == false }
+  for_each = var.repositories
   repository = github_repository.repositories[each.key].name
   branch     = github_repository.repositories[each.key].default_branch
   file       = "CODEOWNERS"
@@ -184,7 +184,7 @@ resource "github_repository_file" "codeowners" {
     " ",
     formatlist("@${var.organization_name}/%s", try(each.value.teams, []))
   )}"
-  commit_message      = "Managed by OpenTofu"
+  commit_message      = "Managed by Terraform"
   commit_author       = "mage-os-ci"
   commit_email        = "info@mage-os.org"
   overwrite_on_create = true
@@ -223,7 +223,7 @@ jobs:
       DISCORD_WEBHOOK: $${{ secrets.DISCORD_WEBHOOK }}
       MAGEOS_GITHUB_TOKEN: $${{ secrets.MAGE_OS_CI_TOKEN }}
 EOT
-  commit_message      = "Managed by OpenTofu"
+  commit_message      = "Managed by Terraform"
   commit_author       = "mage-os-ci"
   commit_email        = "info@mage-os.org"
   overwrite_on_create = true
