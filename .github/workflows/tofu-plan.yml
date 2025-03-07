@@ -1,14 +1,14 @@
-name: "Terraform plan"
+name: "OpenTofu plan"
 
-concurrency: terraform-ci
+concurrency: tofu-ci
 
 on:
   issue_comment:
     types: [created]
 
 jobs:
-  terraform-plan:
-    name: "Terraform plan"
+  opentofu-plan:
+    name: "OpenTofu plan"
     # This conditional acts as an access control list to prevent exposing
     # secrets to untrusted pull requests.
     if: |
@@ -49,7 +49,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "@${{ github.actor }} Starting Terraform plan ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+              body: "@${{ github.actor }} Starting OpenTofu plan ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
             })
 
       - name: Checkout
@@ -57,25 +57,25 @@ jobs:
         with:
           ref: ${{ steps.ref.outputs.result }}
 
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+      - name: Setup OpenTofu
+        uses: opentofu/setup-opentofu@v1
 
-      - name: Terraform init
+      - name: OpenTofu init
         id: init
-        run: terraform init
+        run: tofu init
 
-      - name: Terraform plan
+      - name: OpenTofu plan
         id: plan
-        run: terraform plan -no-color
+        run: tofu plan -no-color
         continue-on-error: true
 
       - uses: actions/github-script@v7
         env:
-          PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
+          PLAN: "tofu\n${{ steps.plan.outputs.stdout }}"
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const output = `#### Terraform Plan \`${{ steps.plan.outcome }}\`
+            const output = `#### OpenTofu Plan \`${{ steps.plan.outcome }}\`
 
             <details><summary>Show Plan</summary>
 
@@ -94,6 +94,6 @@ jobs:
               body: output
             })
 
-      - name: Terraform plan status
+      - name: OpenTofu plan status
         if: steps.plan.outcome == 'failure'
         run: exit 1

@@ -1,6 +1,6 @@
-name: "Terraform apply"
+name: "OpenTofu apply"
 
-concurrency: terraform-ci
+concurrency: tofu-ci
 
 on:
   push:
@@ -14,8 +14,8 @@ on:
       - main
 
 jobs:
-  terraform-apply:
-    name: "Terraform apply"
+  tofu-apply:
+    name: "OpenTofu apply"
     runs-on: ubuntu-latest
     env:
       TF_LOG: DEBUG
@@ -34,16 +34,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+      - name: Set up OpenTofu
+        uses: opentofu/setup-opentofu@v1
 
-      - name: Terraform init
+      - name: OpenTofu init
         id: init
-        run: terraform init
+        run: tofu init
 
-      - name: Terraform validate
+      - name: OpenTofu validate
         id: validate
-        run: terraform validate -no-color
+        run: tofu validate -no-color
 
-      - name: Terraform apply
-        run: terraform apply -auto-approve
+      - name: OpenTofu apply
+        run: tofu apply -auto-approve
