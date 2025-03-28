@@ -126,7 +126,7 @@ resource "github_branch_protection" "repositories-release-please" {
 resource "github_branch_protection" "repositories" {
   for_each      = { for key, value in var.repositories : key => value if try(value.archived, false) == false }
   repository_id = github_repository.repositories[each.key].node_id
-  pattern       = "*"
+  pattern       = github_repository.repositories[each.key].default_branch
 
   required_status_checks {
     strict   = true
