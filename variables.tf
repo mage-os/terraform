@@ -512,6 +512,12 @@ variable "repositories" {
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    php-dependency-list = {
+      description = "Determine PHP class source dependencies file within a project"
+      teams       = ["infrastructure"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+    }
+
     terraform = {
       description = "OpenTofu files for managing the organization repository permissions."
       teams       = ["infrastructure"]
