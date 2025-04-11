@@ -494,12 +494,6 @@ variable "repositories" {
       archived    = true
     }
 
-    php-dependency-list = {
-      description = "Determine PHP class source dependencies file within a project"
-      teams       = ["infrastructure"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
-    }
-
     meta = {
       description = "This is a Mage-OS repo for documents like the contribution/review guidelines."
       teams = [
@@ -514,6 +508,12 @@ variable "repositories" {
 
     namespace = {
       description = "This repository serves to register the mage-os packagist namespace."
+      teams       = ["infrastructure"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+    }
+
+    php-dependency-list = {
+      description = "Determine PHP class source dependencies file within a project"
       teams       = ["infrastructure"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
