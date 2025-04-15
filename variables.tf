@@ -88,6 +88,12 @@ variable "mirror_repositories" {
       topics      = ["mage-os", "mirror", "magento", "php", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    mirror-magento-allure-phpunit = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-allure-phpunit."
+      teams       = ["continuous-integration"]
+      topics      = ["mage-os", "mirror", "magento", "php", "ecommerce", "magento2", "adobecommerce"]
+    }
+
     mirror-magento-cloud-patches = {
       description = "Mage-OS mirror fork of https://github.com/magento/magento-cloud-patches."
       teams       = ["continuous-integration"]
@@ -138,6 +144,11 @@ variable "mirror_repositories" {
 
     mirror-magento-zend-pdf = {
       description = "Mage-OS mirror fork of https://github.com/magento/magento-zend-pdf."
+      teams       = ["continuous-integration"]
+    }
+
+    mirror-magento-zf-db = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-zf-db."
       teams       = ["continuous-integration"]
     }
 
@@ -404,6 +415,12 @@ variable "repositories" {
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    mageos-magento-allure-phpunit = {
+      description = "This is a Mage-OS fork of the Allure PHPUnit adapter found at https://github.com/magento/magento-allure-phpunit."
+      teams       = ["distribution"]
+      topics      = ["mage-os", "mirror", "magento", "php", "ecommerce", "magento2", "adobecommerce"]
+    }
+
     mageos-magento-coding-standard = {
       description = "This is a Mage-OS fork of the Magento Coding Standard found at https://github.com/magento/magento-coding-standard."
       teams       = ["distribution"]
@@ -448,6 +465,11 @@ variable "repositories" {
 
     mageos-magento-zend-pdf = {
       description = "This is a Mage-OS fork of the Zend_Pdf Project found at https://github.com/magento/magento-zend-pdf."
+      teams       = ["distribution"]
+    }
+
+    mageos-magento-zf-db = {
+      description = "This is a Mage-OS fork of the Zend_Db Project found at https://github.com/magento/magento-zf-db."
       teams       = ["distribution"]
     }
 
