@@ -327,6 +327,13 @@ variable "repositories" {
       archived     = true
     }
 
+    magento-cache-clean = {
+      description    = "A faster drop in replacement for bin/magento cache:clean with file watcher"
+      teams          = ["distribution"]
+      default_branch = "main"
+      topics         = ["mage-os", "magento", "magento2", "adobecommerce", "dev-utility", "cache-manager"]
+    }
+
     mageos-adobe-stock-integration = {
       description = "This is a Mage-OS fork of the Magento Adobe Stock Integration Project found at https://github.com/magento/adobe-stock-integration."
       teams       = ["distribution"]
