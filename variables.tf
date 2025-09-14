@@ -327,6 +327,12 @@ variable "repositories" {
       archived     = true
     }
 
+    mage-os-light = {
+      description  = "Source files for the Mage-OS Light"
+      teams        = ["content"]
+      topics       = ["mage-os", "magento", "magento2", "adobecommerce", "office-utility", "3d-printing"]
+    }
+
     magento-cache-clean = {
       description    = "A faster drop in replacement for bin/magento cache:clean with file watcher"
       teams          = ["distribution"]
