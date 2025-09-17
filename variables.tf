@@ -327,12 +327,6 @@ variable "repositories" {
       archived     = true
     }
 
-    mage-os-light = {
-      description  = "Source files for the Mage-OS Light"
-      teams        = ["content"]
-      topics       = ["mage-os", "magento", "magento2", "adobecommerce", "office-utility", "3d-printing"]
-    }
-
     magento-cache-clean = {
       description    = "A faster drop in replacement for bin/magento cache:clean with file watcher"
       teams          = ["distribution"]
@@ -426,6 +420,12 @@ variable "repositories" {
       description = "This is a Mage-OS fork of the Inventory Composer Installer Project found at https://github.com/magento/inventory-composer-installer."
       teams       = ["distribution"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+    }
+
+    mage-os-led-light = {
+      description  = "Source files for the Mage-OS Led Light"
+      teams        = ["content"]
+      topics       = ["mage-os", "magento", "magento2", "adobecommerce", "office-utility", "3d-printing"]
     }
 
     mageos-magento-allure-phpunit = {
