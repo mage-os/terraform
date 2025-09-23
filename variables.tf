@@ -422,8 +422,8 @@ variable "repositories" {
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
-    mage-os-led-light = {
-      description  = "Source files for the Mage-OS Led Light"
+    mage-os-led-lamp = {
+      description  = "Source files for the Mage-OS Led Lamp"
       teams        = ["content"]
       topics       = ["mage-os", "magento", "magento2", "adobecommerce", "office-utility", "3d-printing"]
     }
