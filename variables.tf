@@ -423,9 +423,9 @@ variable "repositories" {
     }
 
     mage-os-led-lamp = {
-      description  = "Source files for the Mage-OS Led Lamp"
-      teams        = ["content"]
-      topics       = ["mage-os", "magento", "magento2", "adobecommerce", "office-utility", "3d-printing"]
+      description = "Source files for the Mage-OS Led Lamp"
+      teams       = ["content"]
+      topics      = ["mage-os", "magento", "magento2", "adobecommerce", "office-utility", "3d-printing"]
     }
 
     mageos-magento-allure-phpunit = {
