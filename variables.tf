@@ -422,6 +422,12 @@ variable "repositories" {
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    mage-os-led-lamp = {
+      description = "Source files for the Mage-OS Led Lamp"
+      teams       = ["content"]
+      topics      = ["mage-os", "magento", "magento2", "adobecommerce", "office-utility", "3d-printing"]
+    }
+
     mageos-magento-allure-phpunit = {
       description = "This is a Mage-OS fork of the Allure PHPUnit adapter found at https://github.com/magento/magento-allure-phpunit."
       teams       = ["distribution"]
