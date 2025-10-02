@@ -556,7 +556,7 @@ variable "repositories" {
     module-meta-robots-tag = {
       description = "Control robots NOINDEX/NOFOLLOW tags per page, category, and product"
       teams       = ["distribution"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab, "extension", "seo"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "seo"]
     }
 
     namespace = {
