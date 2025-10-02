@@ -541,22 +541,40 @@ variable "repositories" {
       topics = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    module-automatic-translation = {
+      description = "Automatic AI content translation for Mage-OS"
+      teams       = ["distribution"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "ai", "i18n"]
+    }
+
+    module-demo-package = {
+      description = "An empty module that does nothing except being installable and testable. Used in CI."
+      teams       = ["distribution"]
+      topics      = []
+    }
+
+    module-meta-robots-tag = {
+      description = "Control robots NOINDEX/NOFOLLOW tags per page, category, and product"
+      teams       = ["distribution"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab, "extension", "seo"]
+    }
+
     namespace = {
       description = "This repository serves to register the mage-os packagist namespace."
       teams       = ["infrastructure"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      topics      = []
     }
 
     php-dependency-list = {
       description = "Determine PHP class source dependencies file within a project"
       teams       = ["infrastructure"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      topics      = ["mage-os", "magento", "php"]
     }
 
     terraform = {
       description = "OpenTofu files for managing the organization repository permissions."
       teams       = ["infrastructure"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      topics      = ["mage-os"]
     }
   }
 }
