@@ -219,7 +219,7 @@ variable "teams" {
     async-events = {
       name        = "async-events"
       description = "Team collaborating on the mageos-async-events repository."
-      members     = [
+      members = [
         "gowrizrh",
         "avstudnitz",
       ]
@@ -228,7 +228,7 @@ variable "teams" {
     content = {
       name        = "Content"
       description = "Content mergers"
-      members     = [
+      members = [
         "johnhughes1984",
         "wigman",
         "Vinai",
@@ -240,7 +240,7 @@ variable "teams" {
     continuous-integration = {
       name        = "Continuous Integration"
       description = "Continuous Integration"
-      members     = [
+      members = [
         "mage-os-ci",
       ]
     }
@@ -248,7 +248,7 @@ variable "teams" {
     distribution = {
       name        = "Distribution"
       description = "Distribution mergers"
-      members     = [
+      members = [
         "Vinai",
         "sprankhub",
         "damienwebdev",
@@ -260,7 +260,7 @@ variable "teams" {
     infrastructure = {
       name        = "Infrastructure"
       description = "Infrastructure mergers"
-      members     = [
+      members = [
         "Vinai",
         "sprankhub",
         "damienwebdev",
@@ -274,7 +274,7 @@ variable "teams" {
     tech-lead = {
       name        = "Tech-lead"
       description = "Technical leaders"
-      members     = [
+      members = [
         "Vinai",
       ]
     }
@@ -552,7 +552,7 @@ variable "repositories" {
 
     meta = {
       description = "This is a Mage-OS repo for documents like the contribution/review guidelines."
-      teams       = [
+      teams = [
         "tech-lead",
         "infrastructure",
         "content",
