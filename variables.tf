@@ -219,7 +219,7 @@ variable "teams" {
     async-events = {
       name        = "async-events"
       description = "Team collaborating on the mageos-async-events repository."
-      members = [
+      members     = [
         "gowrizrh",
         "avstudnitz",
       ]
@@ -228,7 +228,7 @@ variable "teams" {
     content = {
       name        = "Content"
       description = "Content mergers"
-      members = [
+      members     = [
         "johnhughes1984",
         "wigman",
         "Vinai",
@@ -240,7 +240,7 @@ variable "teams" {
     continuous-integration = {
       name        = "Continuous Integration"
       description = "Continuous Integration"
-      members = [
+      members     = [
         "mage-os-ci",
       ]
     }
@@ -248,7 +248,7 @@ variable "teams" {
     distribution = {
       name        = "Distribution"
       description = "Distribution mergers"
-      members = [
+      members     = [
         "Vinai",
         "sprankhub",
         "damienwebdev",
@@ -260,7 +260,7 @@ variable "teams" {
     infrastructure = {
       name        = "Infrastructure"
       description = "Infrastructure mergers"
-      members = [
+      members     = [
         "Vinai",
         "sprankhub",
         "damienwebdev",
@@ -274,7 +274,7 @@ variable "teams" {
     tech-lead = {
       name        = "Tech-lead"
       description = "Technical leaders"
-      members = [
+      members     = [
         "Vinai",
       ]
     }
@@ -335,10 +335,10 @@ variable "repositories" {
     }
 
     mageos-adobe-stock-integration = {
-      description = "This is a Mage-OS fork of the Magento Adobe Stock Integration Project found at https://github.com/magento/adobe-stock-integration."
+      description    = "This is a Mage-OS fork of the Magento Adobe Stock Integration Project found at https://github.com/magento/adobe-stock-integration."
       default_branch = "main"
-      teams       = ["distribution"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      teams          = ["distribution"]
+      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
     mageos-async-events = {
@@ -400,31 +400,31 @@ variable "repositories" {
     }
 
     mageos-composer-dependency-version-audit-plugin = {
-      description = "This is a Mage-OS fork of the validating Magento packages through a composer plugin Project found at https://github.com/magento/composer-dependency-version-audit-plugin."
+      description    = "This is a Mage-OS fork of the validating Magento packages through a composer plugin Project found at https://github.com/magento/composer-dependency-version-audit-plugin."
       default_branch = "mage-os"
-      teams       = ["distribution"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      teams          = ["distribution"]
+      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
     mageos-composer-root-update-plugin = {
-      description = "This is a Mage-OS fork of the Magento Composer Root Update Plugin found at https://github.com/magento/composer-root-update-plugin."
+      description    = "This is a Mage-OS fork of the Magento Composer Root Update Plugin found at https://github.com/magento/composer-root-update-plugin."
       default_branch = "main"
-      teams       = ["distribution"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      teams          = ["distribution"]
+      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
     mageos-inventory = {
-      description = "This is a Mage-OS fork of the Magento Inventory Project (a.k.a MSI) found at https://github.com/magento/inventory."
+      description    = "This is a Mage-OS fork of the Magento Inventory Project (a.k.a MSI) found at https://github.com/magento/inventory."
       default_branch = "main"
-      teams       = ["distribution"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      teams          = ["distribution"]
+      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
     mageos-inventory-composer-installer = {
-      description = "This is a Mage-OS fork of the Inventory Composer Installer Project found at https://github.com/magento/inventory-composer-installer."
+      description    = "This is a Mage-OS fork of the Inventory Composer Installer Project found at https://github.com/magento/inventory-composer-installer."
       default_branch = "main"
-      teams       = ["distribution"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      teams          = ["distribution"]
+      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
     mage-os-led-lamp = {
@@ -440,107 +440,107 @@ variable "repositories" {
     }
 
     mageos-magento-coding-standard = {
-      description = "This is a Mage-OS fork of the Magento Coding Standard found at https://github.com/magento/magento-coding-standard."
+      description    = "This is a Mage-OS fork of the Magento Coding Standard found at https://github.com/magento/magento-coding-standard."
       default_branch = "main"
-      teams       = ["distribution"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      teams          = ["distribution"]
+      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
     mageos-magento-composer-installer = {
-      description = "This is a Mage-OS fork of the Magento Composer Installer Project found at https://github.com/magento/magento-composer-installer."
+      description    = "This is a Mage-OS fork of the Magento Composer Installer Project found at https://github.com/magento/magento-composer-installer."
       default_branch = "main"
-      teams       = ["distribution"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      teams          = ["distribution"]
+      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
     mageos-magento-zend-cache = {
-      description = "This is a Mage-OS fork of the Zend_Cache Project found at https://github.com/magento/magento-zend-cache."
+      description    = "This is a Mage-OS fork of the Zend_Cache Project found at https://github.com/magento/magento-zend-cache."
       default_branch = "mage-os"
-      teams       = ["distribution"]
+      teams          = ["distribution"]
     }
 
     mageos-magento-zend-db = {
-      description = "This is a Mage-OS fork of the Zend_Db Project found at https://github.com/magento/magento-zend-db."
+      description    = "This is a Mage-OS fork of the Zend_Db Project found at https://github.com/magento/magento-zend-db."
       default_branch = "mage-os"
-      teams       = ["distribution"]
+      teams          = ["distribution"]
     }
 
     mageos-magento-zend-exception = {
-      description = "This is a Mage-OS fork of the Zend_Exception Project found at https://github.com/magento/magento-zend-exception."
+      description    = "This is a Mage-OS fork of the Zend_Exception Project found at https://github.com/magento/magento-zend-exception."
       default_branch = "mage-os"
-      teams       = ["distribution"]
+      teams          = ["distribution"]
     }
 
     mageos-magento-zend-loader = {
-      description = "This is a Mage-OS fork of the Zend_Loader Project found at https://github.com/magento/magento-zend-loader."
+      description    = "This is a Mage-OS fork of the Zend_Loader Project found at https://github.com/magento/magento-zend-loader."
       default_branch = "mage-os"
-      teams       = ["distribution"]
+      teams          = ["distribution"]
     }
 
     mageos-magento-zend-log = {
-      description = "This is a Mage-OS fork of the Zend_Log Project found at https://github.com/magento/magento-zend-log."
+      description    = "This is a Mage-OS fork of the Zend_Log Project found at https://github.com/magento/magento-zend-log."
       default_branch = "mage-os"
-      teams       = ["distribution"]
+      teams          = ["distribution"]
     }
 
     mageos-magento-zend-memory = {
-      description = "This is a Mage-OS fork of the Zend_Memory Project found at https://github.com/magento/magento-zend-memory."
+      description    = "This is a Mage-OS fork of the Zend_Memory Project found at https://github.com/magento/magento-zend-memory."
       default_branch = "mage-os"
-      teams       = ["distribution"]
+      teams          = ["distribution"]
     }
 
     mageos-magento-zend-pdf = {
-      description = "This is a Mage-OS fork of the Zend_Pdf Project found at https://github.com/magento/magento-zend-pdf."
+      description    = "This is a Mage-OS fork of the Zend_Pdf Project found at https://github.com/magento/magento-zend-pdf."
       default_branch = "mage-os"
-      teams       = ["distribution"]
+      teams          = ["distribution"]
     }
 
     mageos-magento-zf-db = {
-      description = "This is a Mage-OS fork of the Zend_Db Project found at https://github.com/magento/magento-zf-db."
+      description    = "This is a Mage-OS fork of the Zend_Db Project found at https://github.com/magento/magento-zf-db."
       default_branch = "main"
-      teams       = ["distribution"]
+      teams          = ["distribution"]
     }
 
     mageos-magento2 = {
-      description = "Work in progress."
+      description    = "Work in progress."
       default_branch = "main"
-      teams       = ["distribution"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      teams          = ["distribution"]
+      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
     mageos-magento2-functional-testing-framework = {
-      description = "This is a Mage-OS fork of the Magento 2 Functional Testing Framework found at https://github.com/magento/magento2-functional-testing-framework."
+      description    = "This is a Mage-OS fork of the Magento 2 Functional Testing Framework found at https://github.com/magento/magento2-functional-testing-framework."
       default_branch = "main"
-      teams       = ["distribution"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      teams          = ["distribution"]
+      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
     mageos-magento2-page-builder = {
-      description = "This is a Mage-OS fork of the Magento2 PageBuilder Project found at https://github.com/magento/magento2-page-builder."
+      description    = "This is a Mage-OS fork of the Magento2 PageBuilder Project found at https://github.com/magento/magento2-page-builder."
       default_branch = "main"
-      teams       = ["distribution"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      teams          = ["distribution"]
+      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
     mageos-magento2-sample-data = {
-      description = "This is a Mage-OS fork of the Magento 2 Sample Data Project found at https://github.com/magento/magento2-sample-data."
+      description    = "This is a Mage-OS fork of the Magento 2 Sample Data Project found at https://github.com/magento/magento2-sample-data."
       default_branch = "main"
-      teams       = ["distribution"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      teams          = ["distribution"]
+      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
     mageos-PHPCompatibilityFork = {
-      description = "This is a Mage-OS fork of the Magento 2 PHPCompatibility fork found at https://github.com/magento/PHPCompatibilityFork."
+      description    = "This is a Mage-OS fork of the Magento 2 PHPCompatibility fork found at https://github.com/magento/PHPCompatibilityFork."
       default_branch = "main"
-      teams       = ["distribution"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      teams          = ["distribution"]
+      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
     mageos-security-package = {
-      description = "This is a Mage-OS fork of the Magento Security Extensions Project found at https://github.com/magento/security-package."
+      description    = "This is a Mage-OS fork of the Magento Security Extensions Project found at https://github.com/magento/security-package."
       default_branch = "main"
-      teams       = ["distribution"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      teams          = ["distribution"]
+      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
     magento-gitpod = {
@@ -552,14 +552,14 @@ variable "repositories" {
 
     meta = {
       description = "This is a Mage-OS repo for documents like the contribution/review guidelines."
-      teams = [
+      teams       = [
         "tech-lead",
         "infrastructure",
         "content",
         "distribution",
         "continuous-integration"
       ]
-      topics = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
     module-automatic-translation = {
