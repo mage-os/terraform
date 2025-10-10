@@ -559,7 +559,7 @@ variable "repositories" {
         "distribution",
         "continuous-integration"
       ]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      topics = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
     module-automatic-translation = {
