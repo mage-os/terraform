@@ -553,10 +553,40 @@ variable "repositories" {
       topics      = []
     }
 
+    module-inventory-reservations-grid = {
+      description = "See and manage Magento inventory reservations"
+      teams       = ["distribution"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "inventory", "admin"]
+    }
+
     module-meta-robots-tag = {
       description = "Control robots NOINDEX/NOFOLLOW tags per page, category, and product"
       teams       = ["distribution"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "seo"]
+    }
+
+    module-page-builder-widget = {
+      description = "Native Magento Page Builder support for CMS Widgets"
+      teams       = ["distribution"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "page-builder", "admin"]
+    }
+
+    module-pagebuilder-template-import-export = {
+      description = "Import/Export Magento Page Builder templates"
+      teams       = ["distribution"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "page-builder", "admin", "sync"]
+    }
+
+    module-theme-adminhtml-switcher = {
+      description = "Admin theme switcher for Magento"
+      teams       = ["distribution"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "admin"]
+    }
+
+    module-theme-optimization = {
+      description = "bfcache, speculative loading, and view transitions for Magento"
+      teams       = ["distribution"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "performance", "cwv"]
     }
 
     namespace = {
@@ -575,6 +605,12 @@ variable "repositories" {
       description = "OpenTofu files for managing the organization repository permissions."
       teams       = ["infrastructure"]
       topics      = ["mage-os"]
+    }
+
+    theme-adminhtml-m137 = {
+      description = "M137 Admin Theme for Magento/Mage-OS"
+      teams       = ["distribution"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "theme", "admin"]
     }
   }
 }
