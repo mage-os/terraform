@@ -254,6 +254,7 @@ variable "teams" {
         "damienwebdev",
         "rhoerr",
         "fballiano",
+        "dadolun95",
       ]
     }
 
@@ -268,6 +269,7 @@ variable "teams" {
         "rhoerr",
         "cmuench",
         "fballiano",
+        "dadolun95",
       ]
     }
 
