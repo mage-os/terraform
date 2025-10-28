@@ -32,7 +32,7 @@ jobs:
         run: echo $GOOGLE_APPLICATION_CREDENTIALS_DATA > $GOOGLE_APPLICATION_CREDENTIALS
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up OpenTofu
         uses: opentofu/setup-opentofu@v1
