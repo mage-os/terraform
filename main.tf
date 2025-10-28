@@ -182,7 +182,10 @@ resource "github_repository_file" "codeowners" {
   file       = "CODEOWNERS"
   content = "* ${join(
     " ",
-    formatlist("@${var.organization_name}/%s", try(each.value.teams, []))
+    concat(
+      formatlist("@${var.organization_name}/%s", try(each.value.teams, [])),
+      formatlist("@%s", try(each.value.users, []))
+    )
   )}"
   commit_message      = "Managed by Terraform"
   commit_author       = "mage-os-ci"
