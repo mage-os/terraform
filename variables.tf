@@ -603,6 +603,7 @@ variable "repositories" {
     module-theme-adminhtml-switcher = {
       description = "Admin theme switcher for Magento"
       teams       = ["distribution"]
+      users       = ["artKozynets"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "admin"]
     }
 
@@ -633,6 +634,7 @@ variable "repositories" {
     theme-adminhtml-m137 = {
       description = "M137 Admin Theme for Magento/Mage-OS"
       teams       = ["distribution"]
+      users       = ["artKozynets"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "theme", "admin"]
     }
   }
