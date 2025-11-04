@@ -253,7 +253,6 @@ variable "teams" {
         "sprankhub",
         "damienwebdev",
         "rhoerr",
-        "fballiano",
         "dadolun95",
       ]
     }
@@ -268,7 +267,6 @@ variable "teams" {
         "DavidLambauer",
         "rhoerr",
         "cmuench",
-        "fballiano",
         "dadolun95",
       ]
     }
