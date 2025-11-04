@@ -276,6 +276,7 @@ variable "teams" {
       description = "Technical leaders"
       members = [
         "Vinai",
+        "rhoerr",
       ]
     }
   }
