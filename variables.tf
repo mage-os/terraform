@@ -253,7 +253,6 @@ variable "teams" {
         "sprankhub",
         "damienwebdev",
         "rhoerr",
-        "fballiano",
         "dadolun95",
       ]
     }
@@ -268,7 +267,6 @@ variable "teams" {
         "DavidLambauer",
         "rhoerr",
         "cmuench",
-        "fballiano",
         "dadolun95",
       ]
     }
@@ -278,6 +276,7 @@ variable "teams" {
       description = "Technical leaders"
       members = [
         "Vinai",
+        "rhoerr",
       ]
     }
   }
@@ -567,6 +566,7 @@ variable "repositories" {
     module-automatic-translation = {
       description = "Automatic AI content translation for Mage-OS"
       teams       = ["distribution"]
+      users       = ["SamueleMartini", "dadolun95"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "ai", "i18n"]
     }
 
@@ -579,24 +579,28 @@ variable "repositories" {
     module-inventory-reservations-grid = {
       description = "See and manage Magento inventory reservations"
       teams       = ["distribution"]
+      users       = ["davidtabat"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "inventory", "admin"]
     }
 
     module-meta-robots-tag = {
       description = "Control robots NOINDEX/NOFOLLOW tags per page, category, and product"
       teams       = ["distribution"]
+      users       = ["SamueleMartini"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "seo"]
     }
 
     module-page-builder-widget = {
       description = "Native Magento Page Builder support for CMS Widgets"
       teams       = ["distribution"]
+      users       = ["dadolun95"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "page-builder", "admin"]
     }
 
     module-pagebuilder-template-import-export = {
       description = "Import/Export Magento Page Builder templates"
       teams       = ["distribution"]
+      users       = ["dadolun95"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "page-builder", "admin", "sync"]
     }
 
@@ -610,6 +614,7 @@ variable "repositories" {
     module-theme-optimization = {
       description = "bfcache, speculative loading, and view transitions for Magento"
       teams       = ["distribution"]
+      users       = ["rhoerr"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "performance", "cwv"]
     }
 
