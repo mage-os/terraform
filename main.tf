@@ -25,6 +25,13 @@ data "github_user" "mage-os-ci" {
   username = "mage-os-ci"
 }
 
+data "github_user" "users" {
+  for_each = toset(distinct(flatten([
+    for repo in var.repositories : try(repo.users, [])
+  ])))
+  username = each.key
+}
+
 # Test change
 
 # Using exclusively github_team_membership properly sends invitation, but
@@ -144,7 +151,10 @@ resource "github_branch_protection" "repositories" {
   }
 
   restrict_pushes {
-    push_allowances = try(each.value.is_part_of_monorepo, false) ? [data.github_user.mage-os-ci.node_id] : [for team in each.value.teams : github_team.teams[team].node_id]
+    push_allowances = try(each.value.is_part_of_monorepo, false) ? [data.github_user.mage-os-ci.node_id] : concat(
+      [for team in each.value.teams : github_team.teams[team].node_id],
+      [for user in try(each.value.users, []) : data.github_user.users[user].node_id]
+    )
   }
 }
 
