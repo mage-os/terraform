@@ -503,7 +503,7 @@ variable "repositories" {
     }
 
     mageos-magento2 = {
-      description    = "Work in progress."
+      description    = "This is the Mage-OS fork of the Magento core at https://github.com/magento/magento2. Mage-OS is an independent nonprofit distribution of Magento Open Source. We are not associated with Adobe or Magento in any way. Issues and PRs are welcome."
       default_branch = "main"
       teams          = ["distribution"]
       topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
