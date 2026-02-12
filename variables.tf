@@ -329,9 +329,10 @@ variable "repositories" {
     }
 
     mage-os.org = {
-      description  = "The official Mage-OS website built with Astro."
-      teams        = ["content"]
-      homepage_url = "https://mage-os.org"
+      description    = "The official Mage-OS website built with Astro."
+      teams          = ["content"]
+      default_branch = "main"
+      homepage_url   = "https://mage-os.org"
     }
 
     mage-os.org-sveltia-cms-auth = {
