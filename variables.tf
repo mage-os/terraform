@@ -328,6 +328,17 @@ variable "repositories" {
       archived     = true
     }
 
+    mage-os.org = {
+      description  = "The official Mage-OS website built with Astro."
+      teams        = ["content"]
+      homepage_url = "https://mage-os.org"
+    }
+
+    mage-os.org-sveltia-cms-auth = {
+      description = "Sveltia CMS authentication service for mage-os.org."
+      teams       = ["infrastructure"]
+    }
+
     magento-cache-clean = {
       description    = "A faster drop in replacement for bin/magento cache:clean with file watcher"
       teams          = ["distribution"]
