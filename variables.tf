@@ -233,7 +233,8 @@ variable "teams" {
         "wigman",
         "Vinai",
         "DavidLambauer",
-        "johnprendergast"
+        "johnprendergast",
+        "marcelmtz",
       ]
     }
 
@@ -254,6 +255,7 @@ variable "teams" {
         "damienwebdev",
         "rhoerr",
         "dadolun95",
+        "marcelmtz",
       ]
     }
 
@@ -268,6 +270,7 @@ variable "teams" {
         "rhoerr",
         "cmuench",
         "dadolun95",
+        "marcelmtz",
       ]
     }
 
