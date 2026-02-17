@@ -321,23 +321,23 @@ variable "repositories" {
       topics      = ["mage-os", "magento", "opentofu", "terraform", "magento2", "adobecommerce"]
     }
 
-    mage-os-website = {
-      description  = "Source of the mage-os.org website."
-      teams        = ["content"]
-      homepage_url = "https://mage-os.org"
-      archived     = true
-    }
-
-    "mage-os.org" = {
+    mage-os-org = {
       description    = "The official Mage-OS website built with Astro."
       teams          = ["content"]
       default_branch = "main"
       homepage_url   = "https://mage-os.org"
     }
 
-    "mage-os.org-sveltia-cms-auth" = {
+    mage-os-org-sveltia-cms-auth = {
       description = "Sveltia CMS authentication service for mage-os.org."
       teams       = ["infrastructure"]
+    }
+
+    mage-os-website = {
+      description  = "Source of the mage-os.org website."
+      teams        = ["content"]
+      homepage_url = "https://mage-os.org"
+      archived     = true
     }
 
     magento-cache-clean = {
