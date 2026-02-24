@@ -229,8 +229,6 @@ variable "teams" {
       name        = "Content"
       description = "Content mergers"
       members = [
-        "johnhughes1984",
-        "wigman",
         "Vinai",
         "DavidLambauer",
         "johnprendergast",
@@ -268,7 +266,6 @@ variable "teams" {
         "damienwebdev",
         "DavidLambauer",
         "rhoerr",
-        "cmuench",
         "dadolun95",
         "marcelmtz",
       ]
@@ -329,11 +326,6 @@ variable "repositories" {
       teams          = ["content"]
       default_branch = "main"
       homepage_url   = "https://mage-os.org"
-    }
-
-    mage-os-org-sveltia-cms-auth = {
-      description = "Sveltia CMS authentication service for mage-os.org."
-      teams       = ["infrastructure"]
     }
 
     mage-os-website = {
