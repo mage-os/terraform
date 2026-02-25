@@ -233,6 +233,7 @@ variable "teams" {
         "DavidLambauer",
         "johnprendergast",
         "marcelmtz",
+        "Apfelzimt",
       ]
     }
 
