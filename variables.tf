@@ -307,7 +307,7 @@ variable "repositories" {
       description                = "Mage-OS packaging implementation (JavaScript)."
       teams                      = ["infrastructure"]
       topics                     = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
-      branch_protection_patterns = ["main"]
+      branch_protection_patterns = ["main", "release/*"]
     }
 
     github-actions = {
