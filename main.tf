@@ -163,19 +163,27 @@ resource "github_branch_protection" "repositories" {
   }
 }
 
-# Full branch protection on specific important branches for non-monorepo repos.
-# Uses branch_protection_patterns if set, otherwise defaults to the repo's
-# default branch (or "main"). Requires PR reviews and restricts pushes.
-resource "github_branch_protection" "repositories-protected-branches" {
-  for_each = { for item in flatten([
+# Build the set of branches that get full protection for each repo.
+# Always includes the default branch; repos can add more via branch_protection_patterns.
+locals {
+  protected_branches = { for item in flatten([
     for key, value in var.repositories : [
-      for pattern in try(value.branch_protection_patterns, [try(value.default_branch, "main")]) : {
+      for pattern in distinct(concat(
+        try(value.branch_protection_patterns, []),
+        [try(value.default_branch, "main")],
+      )) : {
         repo_key = key
         repo     = value
         pattern  = pattern
       }
-    ] if try(value.archived, false) == false && !try(value.is_part_of_monorepo, false)
+    ] if !try(value.archived, false) && !try(value.is_part_of_monorepo, false)
   ]) : "${item.repo_key}:${item.pattern}" => item }
+}
+
+# Full branch protection on specific important branches for non-monorepo repos.
+# Requires PR reviews and restricts pushes to designated teams/users.
+resource "github_branch_protection" "repositories-protected-branches" {
+  for_each = local.protected_branches
 
   repository_id = github_repository.repositories[each.value.repo_key].node_id
   pattern       = each.value.pattern
