@@ -38,6 +38,7 @@ All config lives in `variables.tf` default values.
 - `archived` (optional, bool — skips branch protection + eComscan)
 - `is_part_of_monorepo` (optional, bool — restricts push to mage-os-ci only)
 - `release_please_branch` (optional, string — adds protected branch for release-please)
+- `branch_protection_patterns` (optional, list of strings — custom branch protection patterns instead of wildcard `"*"`; each pattern gets the same PR review/push restriction rules)
 
 **`mirror_repositories`** map — key = `mirror-{upstream-name}`:
 - `description` (required), `teams` (required), `topics` (optional)
@@ -57,7 +58,8 @@ github_repository.mirrors           — mirror repos (has_issues=false, prevent_
   github_branch_protection.mirrors  — wildcard "*", only mage-os-ci can push
 github_repository.repositories      — source repos (auto_init, delete_branch_on_merge, prevent_destroy)
   github_branch_default             — custom default branches
-  github_branch_protection          — require PR reviews (1 approval, code owner, tech-lead dismissal), team/user push restrictions
+  github_branch_protection          — wildcard "*" for repos without custom patterns: require PR reviews (1 approval, code owner, tech-lead dismissal), team/user push restrictions
+  github_branch_protection...custom — per-pattern rules for repos with branch_protection_patterns (same settings)
   github_branch_protection...release-please — release-please branch protection
   github_team_repository.teams      — team push access
   github_team_repository.tech-lead  — tech-lead gets maintain on all repos

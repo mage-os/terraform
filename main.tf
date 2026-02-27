@@ -129,7 +129,7 @@ resource "github_branch_protection" "repositories-release-please" {
 }
 
 resource "github_branch_protection" "repositories" {
-  for_each      = { for key, value in var.repositories : key => value if try(value.archived, false) == false }
+  for_each      = { for key, value in var.repositories : key => value if try(value.archived, false) == false && length(try(value.branch_protection_patterns, [])) == 0 }
   repository_id = github_repository.repositories[each.key].node_id
   pattern       = "*"
 
@@ -152,6 +152,43 @@ resource "github_branch_protection" "repositories" {
     push_allowances = try(each.value.is_part_of_monorepo, false) ? [data.github_user.mage-os-ci.node_id] : concat(
       [for team in each.value.teams : github_team.teams[team].node_id],
       [for user in try(each.value.users, []) : data.github_user.users[user].node_id]
+    )
+  }
+}
+
+resource "github_branch_protection" "repositories-custom" {
+  for_each = { for item in flatten([
+    for key, value in var.repositories : [
+      for pattern in try(value.branch_protection_patterns, []) : {
+        repo_key = key
+        repo     = value
+        pattern  = pattern
+      }
+    ] if try(value.archived, false) == false
+  ]) : "${item.repo_key}:${item.pattern}" => item }
+
+  repository_id = github_repository.repositories[each.value.repo_key].node_id
+  pattern       = each.value.pattern
+
+  required_status_checks {
+    strict   = true
+    contexts = []
+  }
+
+  required_pull_request_reviews {
+    require_code_owner_reviews      = true
+    required_approving_review_count = 1
+    dismiss_stale_reviews           = true
+    restrict_dismissals             = true
+    dismissal_restrictions = [
+      github_team.teams["tech-lead"].node_id,
+    ]
+  }
+
+  restrict_pushes {
+    push_allowances = try(each.value.repo.is_part_of_monorepo, false) ? [data.github_user.mage-os-ci.node_id] : concat(
+      [for team in each.value.repo.teams : github_team.teams[team].node_id],
+      [for user in try(each.value.repo.users, []) : data.github_user.users[user].node_id]
     )
   }
 }

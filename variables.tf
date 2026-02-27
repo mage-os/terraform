@@ -304,16 +304,18 @@ variable "repositories" {
     },
 
     generate-mirror-repo-js = {
-      description = "Mage-OS packaging implementation (JavaScript)."
-      teams       = ["infrastructure"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      description                = "Mage-OS packaging implementation (JavaScript)."
+      teams                      = ["infrastructure"]
+      topics                     = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      branch_protection_patterns = ["main"]
     }
 
     github-actions = {
-      description           = "Mage-OS GitHub Actions for the distribution repositories."
-      teams                 = ["infrastructure"]
-      topics                = ["mage-os", "devops", "qa", "ecommerce", "ci", "actions", "magento2", "github-actions", "adobecommerce", "hacktoberfest"]
-      release_please_branch = "release-please--branches--main--components--github-actions"
+      description                = "Mage-OS GitHub Actions for the distribution repositories."
+      teams                      = ["infrastructure"]
+      topics                     = ["mage-os", "devops", "qa", "ecommerce", "ci", "actions", "magento2", "github-actions", "adobecommerce", "hacktoberfest"]
+      release_please_branch      = "release-please--branches--main--components--github-actions"
+      branch_protection_patterns = ["main"]
     }
 
     infrastructure = {
@@ -511,10 +513,11 @@ variable "repositories" {
     }
 
     mageos-magento2 = {
-      description    = "This is the Mage-OS fork of the Magento core at https://github.com/magento/magento2. Mage-OS is an independent nonprofit distribution of Magento Open Source. We are not associated with Adobe or Magento in any way. Issues and PRs are welcome."
-      default_branch = "main"
-      teams          = ["distribution"]
-      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      description                = "This is the Mage-OS fork of the Magento core at https://github.com/magento/magento2. Mage-OS is an independent nonprofit distribution of Magento Open Source. We are not associated with Adobe or Magento in any way. Issues and PRs are welcome."
+      default_branch             = "main"
+      teams                      = ["distribution"]
+      topics                     = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      branch_protection_patterns = ["main", "*-develop", "release/*"]
     }
 
     mageos-magento2-functional-testing-framework = {
