@@ -171,7 +171,7 @@ locals {
       for pattern in distinct(concat(
         try(value.branch_protection_patterns, []),
         [try(value.default_branch, "main")],
-      )) : {
+        )) : {
         repo_key = key
         repo     = value
         pattern  = pattern
