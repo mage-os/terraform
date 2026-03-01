@@ -128,10 +128,65 @@ resource "github_branch_protection" "repositories-release-please" {
   force_push_bypassers = [data.github_user.mage-os-ci.node_id]
 }
 
+# Wildcard branch protection for all non-archived repos.
+# Light rules for normal repos (status checks only — no push restrictions, so CI
+# can freely create and delete branches).
+# Monorepo sub-packages keep strict CI-only push restrictions on all branches.
 resource "github_branch_protection" "repositories" {
   for_each      = { for key, value in var.repositories : key => value if try(value.archived, false) == false }
   repository_id = github_repository.repositories[each.key].node_id
   pattern       = "*"
+
+  required_status_checks {
+    strict   = true
+    contexts = []
+  }
+
+  dynamic "required_pull_request_reviews" {
+    for_each = try(each.value.is_part_of_monorepo, false) ? [1] : []
+    content {
+      require_code_owner_reviews      = true
+      required_approving_review_count = 1
+      dismiss_stale_reviews           = true
+      restrict_dismissals             = true
+      dismissal_restrictions = [
+        github_team.teams["tech-lead"].node_id,
+      ]
+    }
+  }
+
+  dynamic "restrict_pushes" {
+    for_each = try(each.value.is_part_of_monorepo, false) ? [1] : []
+    content {
+      push_allowances = [data.github_user.mage-os-ci.node_id]
+    }
+  }
+}
+
+# Build the set of branches that get full protection for each repo.
+# Always includes the default branch; repos can add more via branch_protection_patterns.
+locals {
+  protected_branches = { for item in flatten([
+    for key, value in var.repositories : [
+      for pattern in distinct(concat(
+        try(value.branch_protection_patterns, []),
+        [try(value.default_branch, "main")],
+        )) : {
+        repo_key = key
+        repo     = value
+        pattern  = pattern
+      }
+    ] if !try(value.archived, false) && !try(value.is_part_of_monorepo, false)
+  ]) : "${item.repo_key}:${item.pattern}" => item }
+}
+
+# Full branch protection on specific important branches for non-monorepo repos.
+# Requires PR reviews and restricts pushes to designated teams/users.
+resource "github_branch_protection" "repositories-protected-branches" {
+  for_each = local.protected_branches
+
+  repository_id = github_repository.repositories[each.value.repo_key].node_id
+  pattern       = each.value.pattern
 
   required_status_checks {
     strict   = true
@@ -149,9 +204,9 @@ resource "github_branch_protection" "repositories" {
   }
 
   restrict_pushes {
-    push_allowances = try(each.value.is_part_of_monorepo, false) ? [data.github_user.mage-os-ci.node_id] : concat(
-      [for team in each.value.teams : github_team.teams[team].node_id],
-      [for user in try(each.value.users, []) : data.github_user.users[user].node_id]
+    push_allowances = concat(
+      [for team in each.value.repo.teams : github_team.teams[team].node_id],
+      [for user in try(each.value.repo.users, []) : data.github_user.users[user].node_id]
     )
   }
 }
