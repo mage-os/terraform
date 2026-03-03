@@ -325,10 +325,11 @@ variable "repositories" {
     }
 
     mage-os-org = {
-      description    = "The official Mage-OS website built with Astro."
-      teams          = ["content"]
-      default_branch = "main"
-      homepage_url   = "https://mage-os.org"
+      description                = "The official Mage-OS website built with Astro."
+      teams                      = ["content"]
+      default_branch             = "main"
+      homepage_url               = "https://mage-os.org"
+      branch_protection_patterns = ["main"]
     }
 
     mage-os-website = {
