@@ -38,6 +38,7 @@ All config lives in `variables.tf` default values.
 - `archived` (optional, bool — skips branch protection + eComscan)
 - `is_part_of_monorepo` (optional, bool — restricts push to mage-os-ci only)
 - `release_please_branch` (optional, string — adds protected branch for release-please)
+- `branch_protection_patterns` (optional, list of strings — additional branch patterns to fully protect beyond the default branch; each pattern gets PR review/push restriction rules)
 
 **`mirror_repositories`** map — key = `mirror-{upstream-name}`:
 - `description` (required), `teams` (required), `topics` (optional)
@@ -57,7 +58,8 @@ github_repository.mirrors           — mirror repos (has_issues=false, prevent_
   github_branch_protection.mirrors  — wildcard "*", only mage-os-ci can push
 github_repository.repositories      — source repos (auto_init, delete_branch_on_merge, prevent_destroy)
   github_branch_default             — custom default branches
-  github_branch_protection          — require PR reviews (1 approval, code owner, tech-lead dismissal), team/user push restrictions
+  github_branch_protection          — two-tier: wildcard "*" with light rules (status checks only) for CI flexibility; monorepo sub-packages keep strict CI-only push restrictions
+  github_branch_protection...protected-branches — full protection on specific branches (PR reviews, push restrictions); always includes default branch, plus any branch_protection_patterns
   github_branch_protection...release-please — release-please branch protection
   github_team_repository.teams      — team push access
   github_team_repository.tech-lead  — tech-lead gets maintain on all repos
@@ -104,5 +106,6 @@ Only `.tf` changes trigger workflows. Concurrency group `tofu-ci` prevents paral
 
 - `$${{ }}` in `github_repository_file` content is intentional — escapes GitHub Actions expressions from Terraform interpolation
 - `data.github_user.users` dynamically resolves repo `users` entries — user must exist on GitHub or plan fails
-- Branch protection uses `pattern = "*"` (all branches, not just default)
+- Branch protection uses two tiers: wildcard `"*"` with light rules on all branches + full protection on specific important branches (defaults to repo's default branch)
+- Monorepo sub-packages are the exception: they keep full wildcard protection (CI-only push on all branches)
 - `/plan` ACL is hardcoded in `tofu-plan.yml` `if` condition
