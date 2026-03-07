@@ -147,8 +147,18 @@ variable "mirror_repositories" {
       teams       = ["continuous-integration"]
     }
 
+    mirror-magento-zf-captcha = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-zf-captcha."
+      teams       = ["continuous-integration"]
+    }
+
     mirror-magento-zf-db = {
       description = "Mage-OS mirror fork of https://github.com/magento/magento-zf-db."
+      teams       = ["continuous-integration"]
+    }
+
+    mirror-magento-zf-soap = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-zf-soap."
       teams       = ["continuous-integration"]
     }
 
