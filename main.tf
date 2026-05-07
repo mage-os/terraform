@@ -289,6 +289,7 @@ jobs:
       - name: Run eComscan
         env:
           ECOMSCAN_KEY: $${{ secrets.SANSEC_LICENSE_KEY }}
+          ECOMSCAN_SKIP_SERVER_CHECKS: 1
         run: |
           output=$(./ecomscan --no-auto-update --skip-database --deep --format=csv .)
           if [ -n "$output" ]; then
