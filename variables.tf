@@ -147,8 +147,18 @@ variable "mirror_repositories" {
       teams       = ["continuous-integration"]
     }
 
+    mirror-magento-zf-captcha = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-zf-captcha."
+      teams       = ["continuous-integration"]
+    }
+
     mirror-magento-zf-db = {
       description = "Mage-OS mirror fork of https://github.com/magento/magento-zf-db."
+      teams       = ["continuous-integration"]
+    }
+
+    mirror-magento-zf-soap = {
+      description = "Mage-OS mirror fork of https://github.com/magento/magento-zf-soap."
       teams       = ["continuous-integration"]
     }
 
@@ -504,8 +514,20 @@ variable "repositories" {
       teams          = ["distribution"]
     }
 
+    mageos-magento-zf-captcha = {
+      description    = "This is a Mage-OS fork of the Zend_Captcha Project found at https://github.com/magento/magento-zf-captcha."
+      default_branch = "main"
+      teams          = ["distribution"]
+    }
+
     mageos-magento-zf-db = {
       description    = "This is a Mage-OS fork of the Zend_Db Project found at https://github.com/magento/magento-zf-db."
+      default_branch = "main"
+      teams          = ["distribution"]
+    }
+
+    mageos-magento-zf-soap = {
+      description    = "This is a Mage-OS fork of the Zend_Soap Project found at https://github.com/magento/magento-zf-soap."
       default_branch = "main"
       teams          = ["distribution"]
     }
