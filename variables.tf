@@ -593,6 +593,12 @@ variable "repositories" {
       topics = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    module-admin-activity-log = {
+      description = "Admin Activity Logs for Magento and Mage-OS (forked from kiwicommerce/magento2-admin-activity)"
+      teams       = ["distribution"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "admin", "logging"]
+    }
+
     module-automatic-translation = {
       description = "Automatic AI content translation for Mage-OS"
       teams       = ["distribution"]
@@ -632,6 +638,13 @@ variable "repositories" {
       teams       = ["distribution"]
       users       = ["dadolun95"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "page-builder", "admin", "sync"]
+    }
+
+    module-rma = {
+      description = "Return Merchandise Authorization (RMA) for Mage-OS / Magento"
+      teams       = ["distribution"]
+      users       = ["SamueleMartini"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "rma", "returns"]
     }
 
     module-theme-adminhtml-switcher = {
