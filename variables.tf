@@ -296,9 +296,10 @@ variable "teams" {
 variable "repositories" {
   default = {
     dashboard = {
-      description = "Mage-OS Dashboard showing an overview of all repositories, issues and pull requests."
-      teams       = ["infrastructure"]
-      topics      = ["mage-os", "ecommerce", "magento2", "adobecommerce"]
+      description                = "Mage-OS Dashboard showing an overview of all repositories, issues and pull requests."
+      teams                      = ["infrastructure"]
+      topics                     = ["mage-os", "ecommerce", "magento2", "adobecommerce"]
+      branch_protection_patterns = ["main"]
     },
 
     devdocs-website = {
@@ -314,16 +315,18 @@ variable "repositories" {
     },
 
     generate-mirror-repo-js = {
-      description = "Mage-OS packaging implementation (JavaScript)."
-      teams       = ["infrastructure"]
-      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      description                = "Mage-OS packaging implementation (JavaScript)."
+      teams                      = ["infrastructure"]
+      topics                     = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      branch_protection_patterns = ["main", "release/*"]
     }
 
     github-actions = {
-      description           = "Mage-OS GitHub Actions for the distribution repositories."
-      teams                 = ["infrastructure"]
-      topics                = ["mage-os", "devops", "qa", "ecommerce", "ci", "actions", "magento2", "github-actions", "adobecommerce", "hacktoberfest"]
-      release_please_branch = "release-please--branches--main--components--github-actions"
+      description                = "Mage-OS GitHub Actions for the distribution repositories."
+      teams                      = ["infrastructure"]
+      topics                     = ["mage-os", "devops", "qa", "ecommerce", "ci", "actions", "magento2", "github-actions", "adobecommerce", "hacktoberfest"]
+      release_please_branch      = "release-please--branches--main--components--github-actions"
+      branch_protection_patterns = ["main"]
     }
 
     infrastructure = {
@@ -333,10 +336,11 @@ variable "repositories" {
     }
 
     mage-os-org = {
-      description    = "The official Mage-OS website built with Astro."
-      teams          = ["content"]
-      default_branch = "main"
-      homepage_url   = "https://mage-os.org"
+      description                = "The official Mage-OS website built with Astro."
+      teams                      = ["content"]
+      default_branch             = "main"
+      homepage_url               = "https://mage-os.org"
+      branch_protection_patterns = ["main"]
     }
 
     mage-os-website = {
@@ -533,10 +537,11 @@ variable "repositories" {
     }
 
     mageos-magento2 = {
-      description    = "This is the Mage-OS fork of the Magento core at https://github.com/magento/magento2. Mage-OS is an independent nonprofit distribution of Magento Open Source. We are not associated with Adobe or Magento in any way. Issues and PRs are welcome."
-      default_branch = "main"
-      teams          = ["distribution"]
-      topics         = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      description                = "This is the Mage-OS fork of the Magento core at https://github.com/magento/magento2. Mage-OS is an independent nonprofit distribution of Magento Open Source. We are not associated with Adobe or Magento in any way. Issues and PRs are welcome."
+      default_branch             = "main"
+      teams                      = ["distribution"]
+      topics                     = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
+      branch_protection_patterns = ["main", "*-develop", "release/*"]
     }
 
     mageos-magento2-functional-testing-framework = {
