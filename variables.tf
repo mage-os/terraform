@@ -240,9 +240,12 @@ variable "teams" {
       description = "Content mergers"
       members = [
         "Vinai",
+        "collymore",
         "DavidLambauer",
         "johnprendergast",
         "marcelmtz",
+        "melindash",
+        "michielgerritsen",
         "Apfelzimt",
       ]
     }
