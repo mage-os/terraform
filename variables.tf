@@ -268,6 +268,8 @@ variable "teams" {
         "rhoerr",
         "dadolun95",
         "marcelmtz",
+        "melindash",
+        "michielgerritsen",
       ]
     }
 
@@ -282,6 +284,8 @@ variable "teams" {
         "rhoerr",
         "dadolun95",
         "marcelmtz",
+        "melindash",
+        "michielgerritsen",
       ]
     }
 
