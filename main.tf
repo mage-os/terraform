@@ -114,6 +114,8 @@ resource "github_repository" "repositories" {
   lifecycle {
     # Never try to replace repository in order to change its configuration.
     prevent_destroy = true
+    # The GitHub App lacks Pages permission; without this, repos with Pages enabled fail with 403 on apply.
+    ignore_changes = [pages]
   }
 }
 
