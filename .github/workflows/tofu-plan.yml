@@ -19,6 +19,9 @@ jobs:
         github.event.comment.user.login == 'sprankhub'
       )
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     env:
       TF_LOG: DEBUG
       # Google Cloud Storage state backend
