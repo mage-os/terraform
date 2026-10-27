@@ -313,6 +313,13 @@ variable "repositories" {
       topics      = ["mage-os", "documentation", "ecommerce", "magento2", "adobecommerce"]
     },
 
+    directory = {
+      description = "Explore and discover available open source and free modules (and services) via the Mage-OS admin panel and mage-os.org"
+      teams       = ["distribution"]
+      users       = ["rhoerr"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "admin", "directory"]
+    }
+
     generate-mirror-repo-js = {
       description = "Mage-OS packaging implementation (JavaScript)."
       teams       = ["infrastructure"]
@@ -640,11 +647,25 @@ variable "repositories" {
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "page-builder", "admin", "sync"]
     }
 
+    module-passkey-auth = {
+      description = "Log in to your customer account with passkey authentication"
+      teams       = ["distribution"]
+      users       = ["rhoerr"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "authentication", "passkey", "webauthn"]
+    }
+
     module-rma = {
       description = "Return Merchandise Authorization (RMA) for Mage-OS / Magento"
       teams       = ["distribution"]
       users       = ["SamueleMartini"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "rma", "returns"]
+    }
+
+    module-shopping-feed = {
+      description = "Product feed generation for Mage-OS and Magento Open Source. Includes Google Shopping, Local Inventory, Promotions, Meta, Microsoft, TikTok, and Pinterest presets, custom mappings, filters, scheduling, FTP/SFTP delivery, and an optional migration companion for Rocket Shopping Feeds."
+      teams       = ["distribution"]
+      users       = ["mattmacrocket"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "shopping-feed", "google-shopping"]
     }
 
     module-theme-adminhtml-switcher = {
