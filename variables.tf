@@ -339,6 +339,13 @@ variable "repositories" {
       topics      = ["mage-os", "magento", "opentofu", "terraform", "magento2", "adobecommerce"]
     }
 
+    mage-os-installer = {
+      description = "Start a new Mage-OS project without worrying about your environment."
+      teams       = ["distribution"]
+      users       = ["michielgerritsen"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "installer", "ddev", "warden"]
+    }
+
     mage-os-org = {
       description    = "The official Mage-OS website built with Astro."
       teams          = ["content"]
@@ -600,10 +607,31 @@ variable "repositories" {
       topics = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce"]
     }
 
+    migrate-m2-to-mageos = {
+      description = "Composer package to easily migrate a Magento 2 instance to Mage-OS"
+      teams       = ["distribution"]
+      users       = ["michielgerritsen"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "migration", "composer"]
+    }
+
     module-admin-activity-log = {
       description = "Admin Activity Logs for Magento and Mage-OS (forked from kiwicommerce/magento2-admin-activity)"
       teams       = ["distribution"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "admin", "logging"]
+    }
+
+    module-aeo = {
+      description = "AI discoverability for Mage-OS and Magento: llms.txt, llms-full.txt, llms.jsonl, and AI crawler robots directives"
+      teams       = ["distribution"]
+      users       = ["Sental"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "seo", "aeo", "ai", "llms-txt"]
+    }
+
+    module-ai-base = {
+      description = "Configure AI providers in one place, with a shared client for modules to use and a dashboard showing per-module AI spend"
+      teams       = ["distribution"]
+      users       = ["michielgerritsen"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "ai", "llm", "admin"]
     }
 
     module-automatic-translation = {
@@ -617,6 +645,13 @@ variable "repositories" {
       description = "An empty module that does nothing except being installable and testable. Used in CI."
       teams       = ["distribution"]
       topics      = []
+    }
+
+    module-faq = {
+      description = "FAQ management for Mage-OS and Magento with a widget, Page Builder content type, and FAQPage structured data"
+      teams       = ["distribution"]
+      users       = ["Sental"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "seo", "faq", "page-builder"]
     }
 
     module-inventory-reservations-grid = {
@@ -659,6 +694,13 @@ variable "repositories" {
       teams       = ["distribution"]
       users       = ["SamueleMartini"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "rma", "returns"]
+    }
+
+    module-seo = {
+      description = "Comprehensive SEO and AEO for Mage-OS and Magento: structured data, Open Graph, canonical/robots, hreflang, and sitemaps"
+      teams       = ["distribution"]
+      users       = ["Sental"]
+      topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "seo", "aeo", "structured-data"]
     }
 
     module-shopping-feed = {
