@@ -69,7 +69,7 @@ jobs:
 
       - name: OpenTofu plan
         id: plan
-        run: tofu plan -no-color
+        run: tofu plan -no-color -concise
         continue-on-error: true
 
       - uses: actions/github-script@v9
