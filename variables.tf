@@ -17,10 +17,12 @@ variable "administrators" {
 variable "allowed_actions" {
   default = [
     "Ilshidur/action-discord@*",
+    "ddev/github-action-setup-ddev@*",
     "devops-infra/action-pull-request@*",
     "dorny/paths-filter@*",
     "easingthemes/ssh-deploy@*",
     "google-github-actions/release-please-action@*",
+    "graycoreio/github-actions-magento2/*",
     "hashicorp/setup-terraform@*",
     "opentofu/setup-opentofu@v2",
     "peter-evans/create-pull-request@*",
@@ -29,6 +31,7 @@ variable "allowed_actions" {
     "shivammathur/setup-php@*",
     "tj-actions/changed-files@*",
     "treosh/lighthouse-ci-action@*",
+    "zizmorcore/zizmor-action@*",
   ]
 }
 
