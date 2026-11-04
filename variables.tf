@@ -14,6 +14,24 @@ variable "administrators" {
   ]
 }
 
+variable "allowed_actions" {
+  default = [
+    "Ilshidur/action-discord@*",
+    "devops-infra/action-pull-request@*",
+    "dorny/paths-filter@*",
+    "easingthemes/ssh-deploy@*",
+    "google-github-actions/release-please-action@*",
+    "hashicorp/setup-terraform@*",
+    "opentofu/setup-opentofu@v2",
+    "peter-evans/create-pull-request@*",
+    "php-actions/composer@*",
+    "shimataro/ssh-key-action@*",
+    "shivammathur/setup-php@*",
+    "tj-actions/changed-files@*",
+    "treosh/lighthouse-ci-action@*",
+  ]
+}
+
 variable "mirror_repositories" {
   default = {
     mirror-adobe-ims = {

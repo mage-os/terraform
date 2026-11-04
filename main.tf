@@ -313,3 +313,19 @@ EOT
     ]
   }
 }
+
+import {
+  to = github_actions_organization_permissions.this
+  id = var.organization_name
+}
+
+resource "github_actions_organization_permissions" "this" {
+  enabled_repositories = "all"
+  allowed_actions      = "selected"
+
+  allowed_actions_config {
+    github_owned_allowed = true
+    verified_allowed     = false
+    patterns_allowed     = var.allowed_actions
+  }
+}
