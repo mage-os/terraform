@@ -17,6 +17,7 @@ variable "administrators" {
 variable "allowed_actions" {
   default = [
     "Ilshidur/action-discord@*",
+    "cloudflare/wrangler-action@*",
     "ddev/github-action-setup-ddev@*",
     "devops-infra/action-pull-request@*",
     "dorny/paths-filter@*",
