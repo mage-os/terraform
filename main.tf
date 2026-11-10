@@ -325,7 +325,7 @@ resource "github_actions_organization_permissions" "this" {
 
   allowed_actions_config {
     github_owned_allowed = true
-    verified_allowed     = false
+    verified_allowed     = true
     patterns_allowed     = var.allowed_actions
   }
 }
