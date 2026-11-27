@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 OpenTofu IaC managing the Mage-OS GitHub organization (nonprofit Magento Open Source distribution).
-Manages: org membership/roles, 6 teams, ~60 source repos, ~39 mirror repos, auto-generated repo files (CODEOWNERS, workflows).
+Manages: org membership/roles, 7 teams, ~60 source repos, ~39 mirror repos, auto-generated repo files (CODEOWNERS, workflows).
 
 ## Files
 
