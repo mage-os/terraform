@@ -289,6 +289,21 @@ variable "teams" {
       ]
     }
 
+    module-maintainers = {
+      name        = "Module Maintainers"
+      description = "Maintainers of modules graduated from mage-os-lab to mage-os"
+      members = [
+        "artKozynets",
+        "dadolun95",
+        "davidtabat",
+        "mattmacrocket",
+        "michielgerritsen",
+        "rhoerr",
+        "SamueleMartini",
+        "Sental",
+      ]
+    }
+
     tech-lead = {
       name        = "Tech-lead"
       description = "Technical leaders"
@@ -623,27 +638,27 @@ variable "repositories" {
 
     module-admin-activity-log = {
       description = "Admin Activity Logs for Magento and Mage-OS (forked from kiwicommerce/magento2-admin-activity)"
-      teams       = ["distribution"]
+      teams       = ["distribution", "module-maintainers"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "admin", "logging"]
     }
 
     module-aeo = {
       description = "AI discoverability for Mage-OS and Magento: llms.txt, llms-full.txt, llms.jsonl, and AI crawler robots directives"
-      teams       = ["distribution"]
+      teams       = ["distribution", "module-maintainers"]
       users       = ["Sental"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "seo", "aeo", "ai", "llms-txt"]
     }
 
     module-ai-base = {
       description = "Configure AI providers in one place, with a shared client for modules to use and a dashboard showing per-module AI spend"
-      teams       = ["distribution"]
+      teams       = ["distribution", "module-maintainers"]
       users       = ["michielgerritsen"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "ai", "llm", "admin"]
     }
 
     module-automatic-translation = {
       description = "Automatic AI content translation for Mage-OS"
-      teams       = ["distribution"]
+      teams       = ["distribution", "module-maintainers"]
       users       = ["SamueleMartini", "dadolun95"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "ai", "i18n"]
     }
@@ -656,77 +671,77 @@ variable "repositories" {
 
     module-faq = {
       description = "FAQ management for Mage-OS and Magento with a widget, Page Builder content type, and FAQPage structured data"
-      teams       = ["distribution"]
+      teams       = ["distribution", "module-maintainers"]
       users       = ["Sental"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "seo", "faq", "page-builder"]
     }
 
     module-inventory-reservations-grid = {
       description = "See and manage Magento inventory reservations"
-      teams       = ["distribution"]
+      teams       = ["distribution", "module-maintainers"]
       users       = ["davidtabat"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "inventory", "admin"]
     }
 
     module-meta-robots-tag = {
       description = "Control robots NOINDEX/NOFOLLOW tags per page, category, and product"
-      teams       = ["distribution"]
+      teams       = ["distribution", "module-maintainers"]
       users       = ["SamueleMartini"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "seo"]
     }
 
     module-page-builder-widget = {
       description = "Native Magento Page Builder support for CMS Widgets"
-      teams       = ["distribution"]
+      teams       = ["distribution", "module-maintainers"]
       users       = ["dadolun95"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "page-builder", "admin"]
     }
 
     module-pagebuilder-template-import-export = {
       description = "Import/Export Magento Page Builder templates"
-      teams       = ["distribution"]
+      teams       = ["distribution", "module-maintainers"]
       users       = ["dadolun95"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "page-builder", "admin", "sync"]
     }
 
     module-passkey-auth = {
       description = "Log in to your customer account with passkey authentication"
-      teams       = ["distribution"]
+      teams       = ["distribution", "module-maintainers"]
       users       = ["rhoerr"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "authentication", "passkey", "webauthn"]
     }
 
     module-rma = {
       description = "Return Merchandise Authorization (RMA) for Mage-OS / Magento"
-      teams       = ["distribution"]
+      teams       = ["distribution", "module-maintainers"]
       users       = ["SamueleMartini"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "rma", "returns"]
     }
 
     module-seo = {
       description = "Comprehensive SEO and AEO for Mage-OS and Magento: structured data, Open Graph, canonical/robots, hreflang, and sitemaps"
-      teams       = ["distribution"]
+      teams       = ["distribution", "module-maintainers"]
       users       = ["Sental"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "seo", "aeo", "structured-data"]
     }
 
     module-shopping-feed = {
       description = "Product feed generation for Mage-OS and Magento Open Source. Includes Google Shopping, Local Inventory, Promotions, Meta, Microsoft, TikTok, and Pinterest presets, custom mappings, filters, scheduling, FTP/SFTP delivery, and an optional migration companion for Rocket Shopping Feeds."
-      teams       = ["distribution"]
+      teams       = ["distribution", "module-maintainers"]
       users       = ["mattmacrocket"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "shopping-feed", "google-shopping"]
     }
 
     module-theme-adminhtml-switcher = {
       description = "Admin theme switcher for Magento"
-      teams       = ["distribution"]
+      teams       = ["distribution", "module-maintainers"]
       users       = ["artKozynets"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "admin"]
     }
 
     module-theme-optimization = {
       description = "bfcache, speculative loading, and view transitions for Magento"
-      teams       = ["distribution"]
+      teams       = ["distribution", "module-maintainers"]
       users       = ["rhoerr"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "extension", "performance", "cwv"]
     }
@@ -751,7 +766,7 @@ variable "repositories" {
 
     theme-adminhtml-m137 = {
       description = "M137 Admin Theme for Magento/Mage-OS"
-      teams       = ["distribution"]
+      teams       = ["distribution", "module-maintainers"]
       users       = ["artKozynets"]
       topics      = ["mage-os", "magento", "ecommerce", "magento2", "adobecommerce", "mage-os-lab", "theme", "admin"]
     }
